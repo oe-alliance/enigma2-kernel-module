@@ -4,7 +4,9 @@
 
 #include <linux/slab.h>
 #include <linux/namei.h>
+#if LINUX_VERSION_CODE > KERNEL_VERSION(3,10,1)
 #include <linux/seq_file.h>
+#endif
 #include <linux/proc_fs.h>
 #include <linux/delay.h>
 #include <linux/uaccess.h>

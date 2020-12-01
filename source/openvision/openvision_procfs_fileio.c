@@ -6,7 +6,11 @@ struct file* file_open(const char* path, int flags, int rights) {
 	int err = 0;
 
 	oldfs = get_fs();
+#if LINUX_VERSION_CODE < KERNEL_VERSION(5,1,0)
+	set_fs(get_ds());
+#else
 	set_fs(KERNEL_DS);
+#endif
 	filp = filp_open(path, flags, rights);
 	set_fs(oldfs);
 
@@ -34,7 +38,11 @@ int file_read(struct file* file, unsigned char* data, unsigned int size)
 	int ret;
 
 	oldfs = get_fs();
+#if LINUX_VERSION_CODE < KERNEL_VERSION(5,1,0)
+	set_fs(get_ds());
+#else
 	set_fs(KERNEL_DS);
+#endif
 
 	ret = kernel_read(file, data, size, &file->f_pos);
 
@@ -49,7 +57,11 @@ int file_write(struct file* file, unsigned char* data, unsigned int size)
 	int ret;
 
 	oldfs = get_fs();
+#if LINUX_VERSION_CODE < KERNEL_VERSION(5,1,0)
+	set_fs(get_ds());
+#else
 	set_fs(KERNEL_DS);
+#endif
 
 	ret = kernel_write(file, data, size, &file->f_pos);
 
@@ -66,7 +78,11 @@ int remove_file(char *path)
 	struct dentry *dentry;
 
 	oldfs = get_fs();
+#if LINUX_VERSION_CODE < KERNEL_VERSION(5,1,0)
+	set_fs(get_ds());
+#else
 	set_fs(KERNEL_DS);
+#endif
 
 	ret = kern_path(path, LOOKUP_PARENT, &ndpath);
 	if (ret != 0)
