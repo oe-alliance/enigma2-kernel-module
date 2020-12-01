@@ -43,9 +43,11 @@ int file_read(struct file* file, unsigned char* data, unsigned int size)
 #else
 	set_fs(KERNEL_DS);
 #endif
-
+#if LINUX_VERSION_CODE < KERNEL_VERSION(4,14,0)
+	ret = vfs_read(file, data, size, &file->f_pos);
+#else
 	ret = kernel_read(file, data, size, &file->f_pos);
-
+#endif
 	set_fs(oldfs);
 
 	return ret;
@@ -62,9 +64,11 @@ int file_write(struct file* file, unsigned char* data, unsigned int size)
 #else
 	set_fs(KERNEL_DS);
 #endif
-
+#if LINUX_VERSION_CODE < KERNEL_VERSION(4,14,0)
+	ret = vfs_write(file, data, size, &file->f_pos);
+#else
 	ret = kernel_write(file, data, size, &file->f_pos);
-
+#endif
 	set_fs(oldfs);
 
 	return ret;
