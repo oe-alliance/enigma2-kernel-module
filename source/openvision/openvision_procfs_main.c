@@ -179,6 +179,17 @@ static int ovprocfs_release(struct inode *inode, struct file *file)
 	return 0;
 }
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,6,0)
+static const struct proc_ops ovprocfs_fops = {
+	.proc_open	= ovprocfs_open,
+	.proc_read	= seq_read,
+	.proc_write	= ovprocfs_write,
+	.proc_lseek	= no_llseek,
+	.proc_poll	= ovprocfs_poll,
+	.proc_mmap	= NULL,
+	.proc_release	= ovprocfs_release,
+};
+#else
 static const struct file_operations ovprocfs_fops = {
 	.owner		= THIS_MODULE,
 	.open		= ovprocfs_open,
@@ -189,7 +200,7 @@ static const struct file_operations ovprocfs_fops = {
 	.mmap		= NULL,
 	.release	= ovprocfs_release,
 };
-
+#endif
 void ov_kernel_info(void)
 {
 	printk(KERN_INFO "model=@MACHINE@\n");
