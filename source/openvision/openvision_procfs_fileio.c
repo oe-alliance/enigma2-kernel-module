@@ -99,8 +99,11 @@ int remove_file(char *path)
 	{
 		return -EACCES;
 	}
-
-	vfs_unlink(ndpath.dentry->d_inode, dentry,NULL);
+#if LINUX_VERSION_CODE < KERNEL_VERSION(3,13,0)
+	vfs_unlink(ndpath.dentry->d_inode, dentry);
+#else
+	vfs_unlink(ndpath.dentry->d_inode, dentry, NULL);
+#endif
 	dput(dentry);
 
 	set_fs(oldfs);
