@@ -254,8 +254,7 @@ static int __init ovprocfs_init_module(void)
 				ovProc[i].entry = create_proc_entry(
 					(strcmp("bus", path) == 0) ? ovProc[i].name : name,
 					0,
-					(strcmp("bus", path) == 0) ? NULL : find_proc_dir(path),
-					&ovprocfs_fops
+					(strcmp("bus", path) == 0) ? NULL : find_proc_dir(path)
 				);
 #else
 				ovProc[i].entry = proc_create(
