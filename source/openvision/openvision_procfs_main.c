@@ -74,8 +74,11 @@ static int ovprocfs_open(struct inode *inode, struct file *file)
 
 	path = kmalloc(PAGE_SIZE, GFP_KERNEL);
 	ovProc_fpath = kmalloc(PAGE_SIZE, GFP_KERNEL);
+#if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,26)
+	ptr = d_path(file->f_dentry, file->f_vfsmnt, path, PAGE_SIZE);
+#else
 	ptr = d_path(&file->f_path, path, PAGE_SIZE);
-
+#endif
 	proc_info->proc_i = -EPERM;
 
 	for (i = 0; i < sizeof(ovProc) / sizeof(ovProc[0]); i++)
