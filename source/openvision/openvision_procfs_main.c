@@ -1,40 +1,43 @@
 #include "openvision_procfs.h"
 
+#define OV_PROC_PERMISSION 0644
+
 struct ProcStructure_s ovProc[] =
 {
 	{cProcDir, "openvision", NULL, NULL, NULL, NULL, ""},
-	{cProcEntry, "openvision/model", NULL, get_ov_model, NULL, NULL, ""},
-	{cProcEntry, "openvision/brand", NULL, get_ov_brand, NULL, NULL, ""},
-	{cProcEntry, "openvision/platform", NULL, get_ov_platform, NULL, NULL, ""},
-	{cProcEntry, "openvision/visionversion", NULL, get_ov_visionversion, NULL, NULL, ""},
-	{cProcEntry, "openvision/visionrevision", NULL, get_ov_visionrevision, NULL, NULL, ""},
-	{cProcEntry, "openvision/visionlanguage", NULL, get_ov_visionlanguage, NULL, NULL, ""},
-	{cProcEntry, "openvision/developername", NULL, get_ov_developername, NULL, NULL, ""},
-	{cProcEntry, "openvision/feedsurl", NULL, get_ov_feedsurl, NULL, NULL, ""},
-	{cProcEntry, "openvision/distro", NULL, get_ov_distro, NULL, NULL, ""},
-	{cProcEntry, "openvision/oe", NULL, get_ov_oe, NULL, NULL, ""},
-	{cProcEntry, "openvision/kernel", NULL, get_ov_kernel, NULL, NULL, ""},
-	{cProcEntry, "openvision/python", NULL, get_ov_python, NULL, NULL, ""},
-	{cProcEntry, "openvision/mediaservice", NULL, get_ov_mediaservice, NULL, NULL, ""},
-	{cProcEntry, "openvision/multilib", NULL, get_ov_multilib, NULL, NULL, ""},
-	{cProcEntry, "openvision/architecture", NULL, get_ov_architecture, NULL, NULL, ""},
-	{cProcEntry, "openvision/socfamily", NULL, get_ov_socfamily, NULL, NULL, ""},
-	{cProcEntry, "openvision/blindscanbinary", NULL, get_ov_blindscanbinary, NULL, NULL, ""},
-	{cProcEntry, "openvision/rctype", NULL, get_ov_rctype, NULL, NULL, ""},
-	{cProcEntry, "openvision/rcname", NULL, get_ov_rcname, NULL, NULL, ""},
-	{cProcEntry, "openvision/rcidnum", NULL, get_ov_rcidnum, NULL, NULL, ""},
-	{cProcEntry, "openvision/smallflash", NULL, get_ov_smallflash, NULL, NULL, ""},
-	{cProcEntry, "openvision/middleflash", NULL, get_ov_middleflash, NULL, NULL, ""},
-	{cProcEntry, "openvision/imagedir", NULL, get_ov_imagedir, NULL, NULL, ""},
-	{cProcEntry, "openvision/imagefs", NULL, get_ov_imagefs, NULL, NULL, ""},
-	{cProcEntry, "openvision/mtdbootfs", NULL, get_ov_mtdbootfs, NULL, NULL, ""},
-	{cProcEntry, "openvision/mtdrootfs", NULL, get_ov_mtdrootfs, NULL, NULL, ""},
-	{cProcEntry, "openvision/mtdkernel", NULL, get_ov_mtdkernel, NULL, NULL, ""},
-	{cProcEntry, "openvision/rootfile", NULL, get_ov_rootfile, NULL, NULL, ""},
-	{cProcEntry, "openvision/kernelfile", NULL, get_ov_kernelfile, NULL, NULL, ""},
-	{cProcEntry, "openvision/mkubifs", NULL, get_ov_mkubifs, NULL, NULL, ""},
-	{cProcEntry, "openvision/ubinize", NULL, get_ov_ubinize, NULL, NULL, ""},
-	{cProcEntry, "openvision/forcemode", NULL, get_ov_forcemode, NULL, NULL, ""}
+	{cProcEntry, "openvision/model", OV_PROC_PERMISSION, get_ov_model, NULL, NULL, ""},
+	{cProcEntry, "openvision/brand", OV_PROC_PERMISSION, get_ov_brand, NULL, NULL, ""},
+	{cProcEntry, "openvision/platform", OV_PROC_PERMISSION, get_ov_platform, NULL, NULL, ""},
+	{cProcEntry, "openvision/visionversion", OV_PROC_PERMISSION, get_ov_visionversion, NULL, NULL, ""},
+	{cProcEntry, "openvision/visionrevision", OV_PROC_PERMISSION, get_ov_visionrevision, NULL, NULL, ""},
+	{cProcEntry, "openvision/visionlanguage", OV_PROC_PERMISSION, get_ov_visionlanguage, NULL, NULL, ""},
+	{cProcEntry, "openvision/developername", OV_PROC_PERMISSION, get_ov_developername, NULL, NULL, ""},
+	{cProcEntry, "openvision/feedsurl", OV_PROC_PERMISSION, get_ov_feedsurl, NULL, NULL, ""},
+	{cProcEntry, "openvision/distro", OV_PROC_PERMISSION, get_ov_distro, NULL, NULL, ""},
+	{cProcEntry, "openvision/oe", OV_PROC_PERMISSION, get_ov_oe, NULL, NULL, ""},
+	{cProcEntry, "openvision/kernel", OV_PROC_PERMISSION, get_ov_kernel, NULL, NULL, ""},
+	{cProcEntry, "openvision/python", OV_PROC_PERMISSION, get_ov_python, NULL, NULL, ""},
+	{cProcEntry, "openvision/mediaservice", OV_PROC_PERMISSION, get_ov_mediaservice, NULL, NULL, ""},
+	{cProcEntry, "openvision/multilib", OV_PROC_PERMISSION, get_ov_multilib, NULL, NULL, ""},
+	{cProcEntry, "openvision/architecture", OV_PROC_PERMISSION, get_ov_architecture, NULL, NULL, ""},
+	{cProcEntry, "openvision/socfamily", OV_PROC_PERMISSION, get_ov_socfamily, NULL, NULL, ""},
+	{cProcEntry, "openvision/blindscanbinary", OV_PROC_PERMISSION, get_ov_blindscanbinary, NULL, NULL, ""},
+	{cProcEntry, "openvision/rctype", OV_PROC_PERMISSION, get_ov_rctype, NULL, NULL, ""},
+	{cProcEntry, "openvision/rcname", OV_PROC_PERMISSION, get_ov_rcname, NULL, NULL, ""},
+	{cProcEntry, "openvision/rcidnum", OV_PROC_PERMISSION, get_ov_rcidnum, NULL, NULL, ""},
+	{cProcEntry, "openvision/smallflash", OV_PROC_PERMISSION, get_ov_smallflash, NULL, NULL, ""},
+	{cProcEntry, "openvision/middleflash", OV_PROC_PERMISSION, get_ov_middleflash, NULL, NULL, ""},
+	{cProcEntry, "openvision/imagedir", OV_PROC_PERMISSION, get_ov_imagedir, NULL, NULL, ""},
+	{cProcEntry, "openvision/imagefs", OV_PROC_PERMISSION, get_ov_imagefs, NULL, NULL, ""},
+	{cProcEntry, "openvision/mtdbootfs", OV_PROC_PERMISSION, get_ov_mtdbootfs, NULL, NULL, ""},
+	{cProcEntry, "openvision/mtdrootfs", OV_PROC_PERMISSION, get_ov_mtdrootfs, NULL, NULL, ""},
+	{cProcEntry, "openvision/mtdkernel", OV_PROC_PERMISSION, get_ov_mtdkernel, NULL, NULL, ""},
+	{cProcEntry, "openvision/rootfile", OV_PROC_PERMISSION, get_ov_rootfile, NULL, NULL, ""},
+	{cProcEntry, "openvision/kernelfile", OV_PROC_PERMISSION, get_ov_kernelfile, NULL, NULL, ""},
+	{cProcEntry, "openvision/mkubifs", OV_PROC_PERMISSION, get_ov_mkubifs, NULL, NULL, ""},
+	{cProcEntry, "openvision/ubinize", OV_PROC_PERMISSION, get_ov_ubinize, NULL, NULL, ""},
+	{cProcEntry, "openvision/forcemode", OV_PROC_PERMISSION, get_ov_forcemode, NULL, NULL, ""},
+	{cProcEntry, "openvision/multiboot", OV_PROC_PERMISSION, NULL, NULL, NULL, ""}
 };
 
 struct proc_dir_entry * find_proc_dir(char * name)
@@ -46,7 +49,6 @@ struct proc_dir_entry * find_proc_dir(char * name)
 		if ((ovProc[i].type == cProcDir) && (strcmp(name, ovProc[i].name) == 0))
 			return ovProc[i].entry;
 	}
-
 	return NULL;
 }
 
@@ -104,10 +106,8 @@ static int ovprocfs_open(struct inode *inode, struct file *file)
 					{
 						proc_info = ovProc[i].proc_info;
 					}
-
 					return single_open(file, ovProc[i].read_proc, proc_info);
 				}
-
 				return single_open(file, ovprocfs_show, proc_info);
 			}
 			else if (file->f_mode & FMODE_WRITE)
@@ -116,14 +116,11 @@ static int ovprocfs_open(struct inode *inode, struct file *file)
 				{
 					proc_info->proc_i = -EPERM;
 				}
-
 				file->private_data = proc_info;
 			}
-
 			break;
 		}
 	}
-
 	return 0;
 }
 
@@ -154,7 +151,6 @@ static ssize_t ovprocfs_write(struct file *file, const char __user *ubuf,
 			ovProc[proc_i].proc_info = proc_info;
 		}
 	}
-
 	return count;
 }
 
@@ -162,23 +158,19 @@ static unsigned int ovprocfs_poll(struct file *file,
 				   struct poll_table_struct *wait)
 {
 	unsigned int mask = 0;
-
 #ifdef DEBUG
 	printk(KERN_DEBUG "ovprocfs: poll called (unimplemented)\n");
 #endif
-
 	return mask;
 }
 
 static int ovprocfs_release(struct inode *inode, struct file *file)
 {
 //	struct ProcWriteInfo *proc_info = file->private_data;
-
 #ifdef DEBUG
 	printk(KERN_DEBUG "ovprocfs: release called\n");
 #endif
 //	kfree(proc_info);
-
 	return 0;
 }
 
@@ -245,6 +237,7 @@ static int __init ovprocfs_init_module(void)
 	int i;
 	char *path;
 	char *name;
+
 	ov_kernel_info();
 
 	for (i = 0; i < sizeof(ovProc) / sizeof(ovProc[0]); i++)
@@ -261,29 +254,29 @@ static int __init ovprocfs_init_module(void)
 				{
 					printk("%s(): could not create entry %s\n", __func__, ovProc[i].name);
 				}
-
 				break;
+
 			case cProcEntry:
 #if LINUX_VERSION_CODE < KERNEL_VERSION(3,10,0)
 				ovProc[i].entry = create_proc_entry(
 					(strcmp("bus", path) == 0) ? ovProc[i].name : name,
-					0,
+					OV_PROC_PERMISSION,
 					(strcmp("bus", path) == 0) ? NULL : find_proc_dir(path)
 				);
 #else
 				ovProc[i].entry = proc_create(
 					(strcmp("bus", path) == 0) ? ovProc[i].name : name,
-					0,
+					OV_PROC_PERMISSION,
 					(strcmp("bus", path) == 0) ? NULL : find_proc_dir(path),
 					&ovprocfs_fops
 				);
 #endif
 				break;
+
 			default:
 				printk("%s(): invalid type %d\n", __func__, ovProc[i].type);
 		}
 	}
-
 	return 0;
 }
 

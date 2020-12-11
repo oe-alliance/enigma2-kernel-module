@@ -8,6 +8,7 @@
 #include <linux/delay.h>
 #include <linux/uaccess.h>
 #include <linux/platform_device.h>
+#include <linux/kernel.h>
 
 #define MAX_CHAR_LENGTH 256
 #define cProcDir	1

@@ -20,7 +20,6 @@ struct file* file_open(const char* path, int flags, int rights) {
 
 		return NULL;
 	}
-
 	return filp;
 }
 
@@ -87,7 +86,6 @@ int remove_file(char *path)
 #else
 	set_fs(KERNEL_DS);
 #endif
-
 	ret = kern_path(path, LOOKUP_PARENT, &ndpath);
 	if (ret != 0)
 	{
@@ -123,7 +121,6 @@ int save_data_to_file(char *path, int flags, char *data, int size)
 
 		return 0;
 	}
-
 	return -1;
 }
 
