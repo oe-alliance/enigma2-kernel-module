@@ -1,6 +1,6 @@
 #include "openvision_procfs.h"
 
-#define OV_PROC_PERMISSION 0644
+#define OV_PROC_PERMISSION 0444
 
 struct ProcStructure_s ovProc[] =
 {
@@ -37,7 +37,6 @@ struct ProcStructure_s ovProc[] =
 	{cProcEntry, "openvision/mkubifs", OV_PROC_PERMISSION, get_ov_mkubifs, NULL, NULL, ""},
 	{cProcEntry, "openvision/ubinize", OV_PROC_PERMISSION, get_ov_ubinize, NULL, NULL, ""},
 	{cProcEntry, "openvision/forcemode", OV_PROC_PERMISSION, get_ov_forcemode, NULL, NULL, ""},
-	{cProcEntry, "openvision/multiboot", OV_PROC_PERMISSION, NULL, NULL, NULL, ""}
 };
 
 struct proc_dir_entry * find_proc_dir(char * name)
