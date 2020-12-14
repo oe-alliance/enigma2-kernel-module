@@ -78,3 +78,4 @@ int get_ov_kernelfile(struct seq_file *m, void* data);
 int get_ov_mkubifs(struct seq_file *m, void* data);
 int get_ov_ubinize(struct seq_file *m, void* data);
 int get_ov_forcemode(struct seq_file *m, void* data);
+int get_ov_compiledate(struct seq_file *m, void* data);

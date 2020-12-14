@@ -287,3 +287,12 @@ int get_ov_forcemode(struct seq_file *m, void* data)
 #endif
 	return 0;
 }
+
+int get_ov_compiledate(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@DATETIME@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "compiledate=@DATETIME@\n");
+#endif
+	return 0;
+}
