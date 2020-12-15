@@ -38,6 +38,23 @@ struct ProcStructure_s ovProc[] =
 	{cProcEntry, "openvision/ubinize", OV_PROC_PERMISSION, get_ov_ubinize, NULL, NULL, ""},
 	{cProcEntry, "openvision/forcemode", OV_PROC_PERMISSION, get_ov_forcemode, NULL, NULL, ""},
 	{cProcEntry, "openvision/compiledate", OV_PROC_PERMISSION, get_ov_compiledate, NULL, NULL, ""},
+	{cProcEntry, "openvision/fpu", OV_PROC_PERMISSION, get_ov_fpu, NULL, NULL, ""},
+	{cProcEntry, "openvision/displaytype", OV_PROC_PERMISSION, get_ov_displaytype, NULL, NULL, ""},
+	{cProcEntry, "openvision/transcoding", OV_PROC_PERMISSION, get_ov_transcoding, NULL, NULL, ""},
+	{cProcEntry, "openvision/multitranscoding", OV_PROC_PERMISSION, get_ov_multitranscoding, NULL, NULL, ""},
+	{cProcEntry, "openvision/hdmi", OV_PROC_PERMISSION, get_ov_hdmi, NULL, NULL, ""},
+	{cProcEntry, "openvision/yuv", OV_PROC_PERMISSION, get_ov_yuv, NULL, NULL, ""},
+	{cProcEntry, "openvision/rca", OV_PROC_PERMISSION, get_ov_rca, NULL, NULL, ""},
+	{cProcEntry, "openvision/avjack", OV_PROC_PERMISSION, get_ov_avjack, NULL, NULL, ""},
+	{cProcEntry, "openvision/scart", OV_PROC_PERMISSION, get_ov_scart, NULL, NULL, ""},
+	{cProcEntry, "openvision/dvi", OV_PROC_PERMISSION, get_ov_dvi, NULL, NULL, ""},
+	{cProcEntry, "openvision/svideo", OV_PROC_PERMISSION, get_ov_svideo, NULL, NULL, ""},
+	{cProcEntry, "openvision/hdmihdin", OV_PROC_PERMISSION, get_ov_hdmihdin, NULL, NULL, ""},
+	{cProcEntry, "openvision/hdmifhdin", OV_PROC_PERMISSION, get_ov_hdmifhdin, NULL, NULL, ""},
+	{cProcEntry, "openvision/wol", OV_PROC_PERMISSION, get_ov_wol, NULL, NULL, ""},
+	{cProcEntry, "openvision/ci", OV_PROC_PERMISSION, get_ov_ci, NULL, NULL, ""},
+	{cProcEntry, "openvision/vfdsymbol", OV_PROC_PERMISSION, get_ov_vfdsymbol, NULL, NULL, ""},
+	{cProcEntry, "openvision/fhdskin", OV_PROC_PERMISSION, get_ov_fhdskin, NULL, NULL, ""}
 };
 
 struct proc_dir_entry * find_proc_dir(char * name)
@@ -230,7 +247,24 @@ void ov_kernel_info(void)
 	printk(KERN_INFO "mkubifs=@MKUBIFS_ARGS@\n");
 	printk(KERN_INFO "ubinize=@UBINIZE_ARGS@\n");
 	printk(KERN_INFO "forcemode=@FORCE@\n");
-	printk(KERN_INFO "compiledate=@DATETIME@\n");
+	printk(KERN_INFO "compiledate=@DATE@\n");
+	printk(KERN_INFO "fpu=@TARGET_FPU@\n");
+	printk(KERN_INFO "displaytype=@DISPLAY_TYPE@\n");
+	printk(KERN_INFO "transcoding=@HAVE_TRANSCODING@\n");
+	printk(KERN_INFO "multitranscoding=@HAVE_MULTITRANSCODING@\n");
+	printk(KERN_INFO "hdmi=@HAVE_HDMI@\n");
+	printk(KERN_INFO "yuv=@HAVE_YUV@\n");
+	printk(KERN_INFO "rca=@HAVE_RCA@\n");
+	printk(KERN_INFO "avjack=@HAVE_AV_JACK@\n");
+	printk(KERN_INFO "scart=@HAVE_SCART@\n");
+	printk(KERN_INFO "dvi=@HAVE_DVI@\n");
+	printk(KERN_INFO "svideo=@HAVE_SVIDEO@\n");
+	printk(KERN_INFO "hdmihdin=@HAVE_HDMI_IN_HD@\n");
+	printk(KERN_INFO "hdmifhdin=@HAVE_HDMI_IN_FHD@\n");
+	printk(KERN_INFO "wol=@HAVE_WOL@\n");
+	printk(KERN_INFO "ci=@HAVE_CI@\n");
+	printk(KERN_INFO "vfdsymbol=@HAVE_VFDSYMBOL@\n");
+	printk(KERN_INFO "fhdskin=@HAVE_FHDSKIN@\n");
 }
 
 static int __init ovprocfs_init_module(void)
@@ -285,5 +319,5 @@ module_init(ovprocfs_init_module);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Open Vision developers");
-MODULE_DESCRIPTION("Open Vision information module\nmodel=@MACHINE@\nbrand=@BOX_BRAND@\nplatform=@STB_PLATFORM@\nvisionversion=@VISIONVERSION@\nvisionrevision=@VISIONREVISION@\nvisionlanguage=@VISIONLANGUAGE@\ndevelopername=@DEVELOPER_NAME@\nfeedsurl=@DISTRO_FEED_URI@\ndistro=@DISTRO_NAME@\noe=@BUILD_VERSION@\nkernel=@KERNELVERSION@\npython=@PREFERRED_VERSION_python@\nmediaservice=@PREFERRED_PROVIDER_virtual/enigma2-mediaservice@\nmultilib=@HAVE_MULTILIB@\narchitecture=@DEFAULTTUNE@\nsocfamily=@SOC_FAMILY@\nblindscanbinary=@BLINDSCAN_BINARY@\nrctype=@RCTYPE@\nrcname=@RCNAME@\nrcidnum=@RCIDNUM@\nsmallflash=@HAVE_SMALLFLASH@\nmiddleflash=@HAVE_MIDDLEFLASH@\nimagedir=@IMAGEDIR@\nimagefs=@IMAGE_FSTYPES@\nmtdbootfs=@MTD_BOOTFS@\nmtdrootfs=@MTD_ROOTFS@\nmtdkernel=@MTD_KERNEL@\nrootfile=@ROOTFS_FILE@\nkernelfile=@KERNEL_FILE@\nmkubifs=@MKUBIFS_ARGS@\nubinize=@UBINIZE_ARGS@\nforcemode=@FORCE@\ncompiledate=@DATETIME@");
+MODULE_DESCRIPTION("Open Vision information module\nmodel=@MACHINE@\nbrand=@BOX_BRAND@\nplatform=@STB_PLATFORM@\nvisionversion=@VISIONVERSION@\nvisionrevision=@VISIONREVISION@\nvisionlanguage=@VISIONLANGUAGE@\ndevelopername=@DEVELOPER_NAME@\nfeedsurl=@DISTRO_FEED_URI@\ndistro=@DISTRO_NAME@\noe=@BUILD_VERSION@\nkernel=@KERNELVERSION@\npython=@PREFERRED_VERSION_python@\nmediaservice=@PREFERRED_PROVIDER_virtual/enigma2-mediaservice@\nmultilib=@HAVE_MULTILIB@\narchitecture=@DEFAULTTUNE@\nsocfamily=@SOC_FAMILY@\nblindscanbinary=@BLINDSCAN_BINARY@\nrctype=@RCTYPE@\nrcname=@RCNAME@\nrcidnum=@RCIDNUM@\nsmallflash=@HAVE_SMALLFLASH@\nmiddleflash=@HAVE_MIDDLEFLASH@\nimagedir=@IMAGEDIR@\nimagefs=@IMAGE_FSTYPES@\nmtdbootfs=@MTD_BOOTFS@\nmtdrootfs=@MTD_ROOTFS@\nmtdkernel=@MTD_KERNEL@\nrootfile=@ROOTFS_FILE@\nkernelfile=@KERNEL_FILE@\nmkubifs=@MKUBIFS_ARGS@\nubinize=@UBINIZE_ARGS@\nforcemode=@FORCE@\ncompiledate=@DATE@\nfpu=@TARGET_FPU@\ndisplaytype=@DISPLAY_TYPE@\ntranscoding=@HAVE_TRANSCODING@\nmultitranscoding=@HAVE_MULTITRANSCODING@\nhdmi=@HAVE_HDMI@\nyuv=@HAVE_YUV@\nrca=@HAVE_RCA@\navjack=@HAVE_AV_JACK@\nscart=@HAVE_SCART@\ndvi=@HAVE_DVI@\nsvideo=@HAVE_SVIDEO@\nhdmihdin=@HAVE_HDMI_IN_HD@\nhdmifhdin=@HAVE_HDMI_IN_FHD@\nwol=@HAVE_WOL@\nci=@HAVE_CI@\nvfdsymbol=@HAVE_VFDSYMBOL@\nfhdskin=@HAVE_FHDSKIN@");
 MODULE_VERSION("@VISIONVERSION@-@VISIONREVISION@");

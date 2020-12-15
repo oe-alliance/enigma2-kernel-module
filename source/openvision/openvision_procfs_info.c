@@ -290,9 +290,162 @@ int get_ov_forcemode(struct seq_file *m, void* data)
 
 int get_ov_compiledate(struct seq_file *m, void* data)
 {
-	seq_printf(m, "@DATETIME@\n");
+	seq_printf(m, "@DATE@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "compiledate=@DATETIME@\n");
+	printk(KERN_INFO "compiledate=@DATE@\n");
+#endif
+	return 0;
+}
+
+int get_ov_fpu(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@TARGET_FPU@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "fpu=@TARGET_FPU@\n");
+#endif
+	return 0;
+}
+
+int get_ov_displaytype(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@DISPLAY_TYPE@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "displaytype=@DISPLAY_TYPE@\n");
+#endif
+	return 0;
+}
+
+int get_ov_transcoding(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_TRANSCODING@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "transcoding=@HAVE_TRANSCODING@\n");
+#endif
+	return 0;
+}
+
+int get_ov_multitranscoding(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_MULTITRANSCODING@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "multitranscoding=@HAVE_MULTITRANSCODING@\n");
+#endif
+	return 0;
+}
+
+int get_ov_hdmi(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_HDMI@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "hdmi=@HAVE_HDMI@\n");
+#endif
+	return 0;
+}
+
+int get_ov_yuv(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_YUV@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "yuv=@HAVE_YUV@\n");
+#endif
+	return 0;
+}
+
+int get_ov_rca(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_RCA@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "rca=@HAVE_RCA@\n");
+#endif
+	return 0;
+}
+
+int get_ov_avjack(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_AV_JACK@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "avjack=@HAVE_AV_JACK@\n");
+#endif
+	return 0;
+}
+
+int get_ov_scart(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_SCART@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "scart=@HAVE_SCART@\n");
+#endif
+	return 0;
+}
+
+int get_ov_dvi(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_DVI@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "dvi=@HAVE_DVI@\n");
+#endif
+	return 0;
+}
+
+int get_ov_svideo(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_SVIDEO@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "svideo=@HAVE_SVIDEO@\n");
+#endif
+	return 0;
+}
+
+int get_ov_hdmihdin(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_HDMI_IN_HD@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "hdmihdin=@HAVE_HDMI_IN_HD@\n");
+#endif
+	return 0;
+}
+
+int get_ov_hdmifhdin(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_HDMI_IN_FHD@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "hdmifhdin=@HAVE_HDMI_IN_FHD@\n");
+#endif
+	return 0;
+}
+
+int get_ov_wol(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_WOL@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "wol=@HAVE_WOL@\n");
+#endif
+	return 0;
+}
+
+int get_ov_ci(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_CI@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "ci=@HAVE_CI@\n");
+#endif
+	return 0;
+}
+
+int get_ov_vfdsymbol(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_VFDSYMBOL@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "vfdsymbol=@HAVE_VFDSYMBOL@\n");
+#endif
+	return 0;
+}
+
+int get_ov_fhdskin(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_FHDSKIN@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "fhdskin=@HAVE_FHDSKIN@\n");
 #endif
 	return 0;
 }
