@@ -449,3 +449,12 @@ int get_ov_fhdskin(struct seq_file *m, void* data)
 #endif
 	return 0;
 }
+
+int get_ov_dboxlcd(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@SUPPORT_DBOXLCD@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "dboxlcd=@SUPPORT_DBOXLCD@\n");
+#endif
+	return 0;
+}

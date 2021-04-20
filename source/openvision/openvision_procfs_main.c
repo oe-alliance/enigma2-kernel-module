@@ -54,7 +54,8 @@ struct ProcStructure_s ovProc[] =
 	{cProcEntry, "openvision/wol", OV_PROC_PERMISSION, get_ov_wol, NULL, NULL, ""},
 	{cProcEntry, "openvision/ci", OV_PROC_PERMISSION, get_ov_ci, NULL, NULL, ""},
 	{cProcEntry, "openvision/vfdsymbol", OV_PROC_PERMISSION, get_ov_vfdsymbol, NULL, NULL, ""},
-	{cProcEntry, "openvision/fhdskin", OV_PROC_PERMISSION, get_ov_fhdskin, NULL, NULL, ""}
+	{cProcEntry, "openvision/fhdskin", OV_PROC_PERMISSION, get_ov_fhdskin, NULL, NULL, ""},
+	{cProcEntry, "openvision/dboxlcd", OV_PROC_PERMISSION, get_ov_dboxlcd, NULL, NULL, ""}
 };
 
 struct proc_dir_entry * find_proc_dir(char * name)
@@ -265,6 +266,7 @@ void ov_kernel_info(void)
 	printk(KERN_INFO "ci=@HAVE_CI@\n");
 	printk(KERN_INFO "vfdsymbol=@HAVE_VFDSYMBOL@\n");
 	printk(KERN_INFO "fhdskin=@HAVE_FHDSKIN@\n");
+	printk(KERN_INFO "dboxlcd=@SUPPORT_DBOXLCD@\n");
 }
 
 static int __init ovprocfs_init_module(void)
@@ -319,5 +321,5 @@ module_init(ovprocfs_init_module);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Open Vision developers");
-MODULE_DESCRIPTION("Open Vision information module\nmodel=@MACHINE@\nbrand=@BOX_BRAND@\nplatform=@STB_PLATFORM@\nvisionversion=@VISIONVERSION@\nvisionrevision=@VISIONREVISION@\nvisionlanguage=@VISIONLANGUAGE@\ndevelopername=@DEVELOPER_NAME@\nfeedsurl=@DISTRO_FEED_URI@\ndistro=@DISTRO_NAME@\noe=@BUILD_VERSION@\nkernel=@KERNELVERSION@\npython=@PREFERRED_VERSION_python@\nmediaservice=@PREFERRED_PROVIDER_virtual/enigma2-mediaservice@\nmultilib=@HAVE_MULTILIB@\narchitecture=@DEFAULTTUNE@\nsocfamily=@SOC_FAMILY@\nblindscanbinary=@BLINDSCAN_BINARY@\nrctype=@RCTYPE@\nrcname=@RCNAME@\nrcidnum=@RCIDNUM@\nsmallflash=@HAVE_SMALLFLASH@\nmiddleflash=@HAVE_MIDDLEFLASH@\nimagedir=@IMAGEDIR@\nimagefs=@IMAGE_FSTYPES@\nmtdbootfs=@MTD_BOOTFS@\nmtdrootfs=@MTD_ROOTFS@\nmtdkernel=@MTD_KERNEL@\nrootfile=@ROOTFS_FILE@\nkernelfile=@KERNEL_FILE@\nmkubifs=@MKUBIFS_ARGS@\nubinize=@UBINIZE_ARGS@\nforcemode=@FORCE@\ncompiledate=@DATE@\nfpu=@TARGET_FPU@\ndisplaytype=@DISPLAY_TYPE@\ntranscoding=@HAVE_TRANSCODING@\nmultitranscoding=@HAVE_MULTITRANSCODING@\nhdmi=@HAVE_HDMI@\nyuv=@HAVE_YUV@\nrca=@HAVE_RCA@\navjack=@HAVE_AV_JACK@\nscart=@HAVE_SCART@\ndvi=@HAVE_DVI@\nsvideo=@HAVE_SVIDEO@\nhdmihdin=@HAVE_HDMI_IN_HD@\nhdmifhdin=@HAVE_HDMI_IN_FHD@\nwol=@HAVE_WOL@\nci=@HAVE_CI@\nvfdsymbol=@HAVE_VFDSYMBOL@\nfhdskin=@HAVE_FHDSKIN@");
+MODULE_DESCRIPTION("Open Vision information module\nmodel=@MACHINE@\nbrand=@BOX_BRAND@\nplatform=@STB_PLATFORM@\nvisionversion=@VISIONVERSION@\nvisionrevision=@VISIONREVISION@\nvisionlanguage=@VISIONLANGUAGE@\ndevelopername=@DEVELOPER_NAME@\nfeedsurl=@DISTRO_FEED_URI@\ndistro=@DISTRO_NAME@\noe=@BUILD_VERSION@\nkernel=@KERNELVERSION@\npython=@PREFERRED_VERSION_python@\nmediaservice=@PREFERRED_PROVIDER_virtual/enigma2-mediaservice@\nmultilib=@HAVE_MULTILIB@\narchitecture=@DEFAULTTUNE@\nsocfamily=@SOC_FAMILY@\nblindscanbinary=@BLINDSCAN_BINARY@\nrctype=@RCTYPE@\nrcname=@RCNAME@\nrcidnum=@RCIDNUM@\nsmallflash=@HAVE_SMALLFLASH@\nmiddleflash=@HAVE_MIDDLEFLASH@\nimagedir=@IMAGEDIR@\nimagefs=@IMAGE_FSTYPES@\nmtdbootfs=@MTD_BOOTFS@\nmtdrootfs=@MTD_ROOTFS@\nmtdkernel=@MTD_KERNEL@\nrootfile=@ROOTFS_FILE@\nkernelfile=@KERNEL_FILE@\nmkubifs=@MKUBIFS_ARGS@\nubinize=@UBINIZE_ARGS@\nforcemode=@FORCE@\ncompiledate=@DATE@\nfpu=@TARGET_FPU@\ndisplaytype=@DISPLAY_TYPE@\ntranscoding=@HAVE_TRANSCODING@\nmultitranscoding=@HAVE_MULTITRANSCODING@\nhdmi=@HAVE_HDMI@\nyuv=@HAVE_YUV@\nrca=@HAVE_RCA@\navjack=@HAVE_AV_JACK@\nscart=@HAVE_SCART@\ndvi=@HAVE_DVI@\nsvideo=@HAVE_SVIDEO@\nhdmihdin=@HAVE_HDMI_IN_HD@\nhdmifhdin=@HAVE_HDMI_IN_FHD@\nwol=@HAVE_WOL@\nci=@HAVE_CI@\nvfdsymbol=@HAVE_VFDSYMBOL@\nfhdskin=@HAVE_FHDSKIN@\ndboxlcd=@SUPPORT_DBOXLCD@");
 MODULE_VERSION("@VISIONVERSION@-@VISIONREVISION@");
