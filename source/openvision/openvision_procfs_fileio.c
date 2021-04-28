@@ -100,7 +100,11 @@ int remove_file(char *path)
 #if LINUX_VERSION_CODE < KERNEL_VERSION(3,13,0)
 	vfs_unlink(ndpath.dentry->d_inode, dentry);
 #else
+#if LINUX_VERSION_CODE < KERNEL_VERSION(5,12,0)
 	vfs_unlink(ndpath.dentry->d_inode, dentry, NULL);
+#else
+	vfs_unlink(NULL, ndpath.dentry->d_inode, dentry, NULL);
+#endif
 #endif
 	dput(dentry);
 
