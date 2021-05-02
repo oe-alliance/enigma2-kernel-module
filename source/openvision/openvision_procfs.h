@@ -97,3 +97,7 @@ int get_ov_ci(struct seq_file *m, void* data);
 int get_ov_vfdsymbol(struct seq_file *m, void* data);
 int get_ov_fhdskin(struct seq_file *m, void* data);
 int get_ov_dboxlcd(struct seq_file *m, void* data);
+int get_ov_imageversion(struct seq_file *m, void* data);
+int get_ov_imagebuild(struct seq_file *m, void* data);
+int get_ov_imagedevbuild(struct seq_file *m, void* data);
+int get_ov_imagetype(struct seq_file *m, void* data);

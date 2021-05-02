@@ -458,3 +458,39 @@ int get_ov_dboxlcd(struct seq_file *m, void* data)
 #endif
 	return 0;
 }
+
+int get_ov_imageversion(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@DISTRO_VERSION@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "imageversion(=@DISTRO_VERSION@\n");
+#endif
+	return 0;
+}
+
+int get_ov_imagebuild(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@BUILD_VERSION@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "imagebuild(=@BUILD_VERSION@\n");
+#endif
+	return 0;
+}
+
+int get_ov_imagedevbuild(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@DEVELOPER_BUILD_VERSION@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "imagedevbuild(=@DEVELOPER_BUILD_VERSION@\n");
+#endif
+	return 0;
+}
+
+int get_ov_imagetype(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@DISTRO_TYPE@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "imagetype(=@DISTRO_TYPE@\n");
+#endif
+	return 0;
+}
