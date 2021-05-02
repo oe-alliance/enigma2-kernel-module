@@ -6,56 +6,107 @@ struct ProcStructure_s ovProc[] =
 {
 	{cProcDir, "openvision", NULL, NULL, NULL, NULL, ""},
 	{cProcEntry, "openvision/model", OV_PROC_PERMISSION, get_ov_model, NULL, NULL, ""},
+	//getBoxType
 	{cProcEntry, "openvision/brand", OV_PROC_PERMISSION, get_ov_brand, NULL, NULL, ""},
+	//getBoxBrand
 	{cProcEntry, "openvision/platform", OV_PROC_PERMISSION, get_ov_platform, NULL, NULL, ""},
+	//getMachineBuild
 	{cProcEntry, "openvision/visionversion", OV_PROC_PERMISSION, get_ov_visionversion, NULL, NULL, ""},
+	//getVisionVersion
 	{cProcEntry, "openvision/visionrevision", OV_PROC_PERMISSION, get_ov_visionrevision, NULL, NULL, ""},
+	//getVisionRevision
 	{cProcEntry, "openvision/visionlanguage", OV_PROC_PERMISSION, get_ov_visionlanguage, NULL, NULL, ""},
+	//new
 	{cProcEntry, "openvision/developername", OV_PROC_PERMISSION, get_ov_developername, NULL, NULL, ""},
+	//getDeveloperName
 	{cProcEntry, "openvision/feedsurl", OV_PROC_PERMISSION, get_ov_feedsurl, NULL, NULL, ""},
+	//getFeedsUrl
 	{cProcEntry, "openvision/distro", OV_PROC_PERMISSION, get_ov_distro, NULL, NULL, ""},
+	//getImageDistro
 	{cProcEntry, "openvision/oe", OV_PROC_PERMISSION, get_ov_oe, NULL, NULL, ""},
+	//getOEVersion
 	{cProcEntry, "openvision/kernel", OV_PROC_PERMISSION, get_ov_kernel, NULL, NULL, ""},
+	//getKernelVersion
 	{cProcEntry, "openvision/python", OV_PROC_PERMISSION, get_ov_python, NULL, NULL, ""},
+	//new
 	{cProcEntry, "openvision/mediaservice", OV_PROC_PERMISSION, get_ov_mediaservice, NULL, NULL, ""},
+	//getE2Service
 	{cProcEntry, "openvision/multilib", OV_PROC_PERMISSION, get_ov_multilib, NULL, NULL, ""},
+	//getHaveMultiLib
 	{cProcEntry, "openvision/architecture", OV_PROC_PERMISSION, get_ov_architecture, NULL, NULL, ""},
+	//getImageArch
 	{cProcEntry, "openvision/socfamily", OV_PROC_PERMISSION, get_ov_socfamily, NULL, NULL, ""},
+	//getSoCFamily
 	{cProcEntry, "openvision/blindscanbinary", OV_PROC_PERMISSION, get_ov_blindscanbinary, NULL, NULL, ""},
+	//getBlindscanBin
 	{cProcEntry, "openvision/rctype", OV_PROC_PERMISSION, get_ov_rctype, NULL, NULL, ""},
+	//getRCType
 	{cProcEntry, "openvision/rcname", OV_PROC_PERMISSION, get_ov_rcname, NULL, NULL, ""},
+	//getRCName
 	{cProcEntry, "openvision/rcidnum", OV_PROC_PERMISSION, get_ov_rcidnum, NULL, NULL, ""},
+	//getRCIDNum
 	{cProcEntry, "openvision/smallflash", OV_PROC_PERMISSION, get_ov_smallflash, NULL, NULL, ""},
+	//getHaveSmallFlash
 	{cProcEntry, "openvision/middleflash", OV_PROC_PERMISSION, get_ov_middleflash, NULL, NULL, ""},
+	//getHaveMiddleFlash
 	{cProcEntry, "openvision/imagedir", OV_PROC_PERMISSION, get_ov_imagedir, NULL, NULL, ""},
+	//getImageFolder
 	{cProcEntry, "openvision/imagefs", OV_PROC_PERMISSION, get_ov_imagefs, NULL, NULL, ""},
+	//getImageFileSystem
 	{cProcEntry, "openvision/mtdbootfs", OV_PROC_PERMISSION, get_ov_mtdbootfs, NULL, NULL, ""},
+	//getMachineMtdBoot
 	{cProcEntry, "openvision/mtdrootfs", OV_PROC_PERMISSION, get_ov_mtdrootfs, NULL, NULL, ""},
+	//getMachineMtdRoot
 	{cProcEntry, "openvision/mtdkernel", OV_PROC_PERMISSION, get_ov_mtdkernel, NULL, NULL, ""},
+	//getMachineMtdKernel
 	{cProcEntry, "openvision/rootfile", OV_PROC_PERMISSION, get_ov_rootfile, NULL, NULL, ""},
+	//getMachineRootFile
 	{cProcEntry, "openvision/kernelfile", OV_PROC_PERMISSION, get_ov_kernelfile, NULL, NULL, ""},
+	//getMachineKernelFile
 	{cProcEntry, "openvision/mkubifs", OV_PROC_PERMISSION, get_ov_mkubifs, NULL, NULL, ""},
+	//getMachineMKUBIFS
 	{cProcEntry, "openvision/ubinize", OV_PROC_PERMISSION, get_ov_ubinize, NULL, NULL, ""},
+	//getMachineUBINIZE
 	{cProcEntry, "openvision/forcemode", OV_PROC_PERMISSION, get_ov_forcemode, NULL, NULL, ""},
+	//getForceMode
 	{cProcEntry, "openvision/compiledate", OV_PROC_PERMISSION, get_ov_compiledate, NULL, NULL, ""},
+	//new
 	{cProcEntry, "openvision/fpu", OV_PROC_PERMISSION, get_ov_fpu, NULL, NULL, ""},
+	//getImageFPU
 	{cProcEntry, "openvision/displaytype", OV_PROC_PERMISSION, get_ov_displaytype, NULL, NULL, ""},
+	//getDisplayType
 	{cProcEntry, "openvision/transcoding", OV_PROC_PERMISSION, get_ov_transcoding, NULL, NULL, ""},
+	//getHaveTranscoding
 	{cProcEntry, "openvision/multitranscoding", OV_PROC_PERMISSION, get_ov_multitranscoding, NULL, NULL, ""},
+	//getHaveMultiTranscoding
 	{cProcEntry, "openvision/hdmi", OV_PROC_PERMISSION, get_ov_hdmi, NULL, NULL, ""},
+	//getHaveHDMI
 	{cProcEntry, "openvision/yuv", OV_PROC_PERMISSION, get_ov_yuv, NULL, NULL, ""},
+	//getHaveYUV
 	{cProcEntry, "openvision/rca", OV_PROC_PERMISSION, get_ov_rca, NULL, NULL, ""},
+	//getHaveRCA
 	{cProcEntry, "openvision/avjack", OV_PROC_PERMISSION, get_ov_avjack, NULL, NULL, ""},
+	//getHaveAVJACK
 	{cProcEntry, "openvision/scart", OV_PROC_PERMISSION, get_ov_scart, NULL, NULL, ""},
+	//getHaveSCART
 	{cProcEntry, "openvision/dvi", OV_PROC_PERMISSION, get_ov_dvi, NULL, NULL, ""},
+	//getHaveDVI
 	{cProcEntry, "openvision/svideo", OV_PROC_PERMISSION, get_ov_svideo, NULL, NULL, ""},
+	//getHaveSVIDEO
 	{cProcEntry, "openvision/hdmihdin", OV_PROC_PERMISSION, get_ov_hdmihdin, NULL, NULL, ""},
+	//getHaveHDMIinHD
 	{cProcEntry, "openvision/hdmifhdin", OV_PROC_PERMISSION, get_ov_hdmifhdin, NULL, NULL, ""},
+	//getHaveHDMIinFHD
 	{cProcEntry, "openvision/wol", OV_PROC_PERMISSION, get_ov_wol, NULL, NULL, ""},
+	//getHaveWOL
 	{cProcEntry, "openvision/ci", OV_PROC_PERMISSION, get_ov_ci, NULL, NULL, ""},
+	//getHaveCI
 	{cProcEntry, "openvision/vfdsymbol", OV_PROC_PERMISSION, get_ov_vfdsymbol, NULL, NULL, ""},
+	//getHaveVFDSymbol
 	{cProcEntry, "openvision/fhdskin", OV_PROC_PERMISSION, get_ov_fhdskin, NULL, NULL, ""},
+	//getFHDSkin
 	{cProcEntry, "openvision/dboxlcd", OV_PROC_PERMISSION, get_ov_dboxlcd, NULL, NULL, ""}
+	//getDBoxLCD
 };
 
 struct proc_dir_entry * find_proc_dir(char * name)
