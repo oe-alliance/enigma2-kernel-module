@@ -1,0 +1,8 @@
+menu "Open Vision enigma module"
+
+config ENIGMAMODULE
+        tristate "enigma module"
+        default M
+        help
+                Select to enable enigma module.
+endmenu

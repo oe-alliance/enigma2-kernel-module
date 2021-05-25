@@ -1,5 +1,5 @@
-PKG_NAME="openvision-module"
-#PKG_VERSION="10.2"
+PKG_NAME="enigma-module"
+#PKG_VERSION="10.3"
 PKG_REV="1"
 #PKG_ARCH="arm"
 PKG_LICENSE="nonfree"
@@ -9,8 +9,8 @@ PKG_DEPENDS_TARGET="toolchain linux"
 PKG_NEED_UNPACK="$LINUX_DEPENDS"
 PKG_PRIORITY="optional"
 PKG_SECTION="driver"
-PKG_SHORTDESC="Open Vision module"
-PKG_LONGDESC="These package contains Open Vision module"
+PKG_SHORTDESC="Open Vision enigma module"
+PKG_LONGDESC="These package contains Open Vision enigma module"
 PKG_MAINTAINER="Open Vision developers"
 
 PKG_IS_ADDON="no"
@@ -29,7 +29,7 @@ make_target() {
 		cp -rf "$PKG_DIR/source" "$ROOT/$PKG_BUILD"
 	fi
 
-	cd "$ROOT/$PKG_BUILD/openvision"
+	cd "$ROOT/$PKG_BUILD/enigma"
 
 	make \
 		V=1 \
@@ -37,7 +37,7 @@ make_target() {
 		KSRC=$(kernel_path) \
 		CROSS_COMPILE=$TARGET_PREFIX
 
-	fix_module_depends "openvision.ko"
+	fix_module_depends "enigma.ko"
 }
 
 makeinstall_target() {

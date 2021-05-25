@@ -47,11 +47,13 @@ char * dirname(char * name);
 char * basename(char * name);
 
 int get_ov_model(struct seq_file *m, void* data);
+int get_ov_displaymodel(struct seq_file *m, void* data);
 int get_ov_brand(struct seq_file *m, void* data);
+int get_ov_displaybrand(struct seq_file *m, void* data);
 int get_ov_platform(struct seq_file *m, void* data);
-int get_ov_visionversion(struct seq_file *m, void* data);
-int get_ov_visionrevision(struct seq_file *m, void* data);
-int get_ov_visionlanguage(struct seq_file *m, void* data);
+int get_ov_imgversion(struct seq_file *m, void* data);
+int get_ov_imgrevision(struct seq_file *m, void* data);
+int get_ov_imglanguage(struct seq_file *m, void* data);
 int get_ov_developername(struct seq_file *m, void* data);
 int get_ov_feedsurl(struct seq_file *m, void* data);
 int get_ov_distro(struct seq_file *m, void* data);

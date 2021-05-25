@@ -1,8 +1,0 @@
-menu "Open Vision module"
-
-config OPENVISIONMODULE
-        tristate "openvision module"
-        default M
-        help
-                Select to enable openvision module.
-endmenu

@@ -1,10 +1,19 @@
-#include "openvision_procfs.h"
+#include "enigma_procfs.h"
 
 int get_ov_model(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@MACHINE@\n");
 #ifdef DEBUG
 	printk(KERN_INFO "model=@MACHINE@\n");
+#endif
+	return 0;
+}
+
+int get_ov_displaymodel(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@DISPLAY_MODEL@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "model=@DISPLAY_MODEL@\n");
 #endif
 	return 0;
 }
@@ -18,6 +27,15 @@ int get_ov_brand(struct seq_file *m, void* data)
 	return 0;
 }
 
+int get_ov_displaybrand(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@DISPLAY_BRAND@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "brand=@DISPLAY_BRAND@\n");
+#endif
+	return 0;
+}
+
 int get_ov_platform(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@STB_PLATFORM@\n");
@@ -27,29 +45,29 @@ int get_ov_platform(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_visionversion(struct seq_file *m, void* data)
+int get_ov_imgversion(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@VISIONVERSION@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "visionversion=@VISIONVERSION@\n");
+	printk(KERN_INFO "imgversion=@VISIONVERSION@\n");
 #endif
 	return 0;
 }
 
-int get_ov_visionrevision(struct seq_file *m, void* data)
+int get_ov_imgrevision(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@VISIONREVISION@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "visionrevision=@VISIONREVISION@\n");
+	printk(KERN_INFO "imgrevision=@VISIONREVISION@\n");
 #endif
 	return 0;
 }
 
-int get_ov_visionlanguage(struct seq_file *m, void* data)
+int get_ov_imglanguage(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@VISIONLANGUAGE@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "visionlanguage=@VISIONLANGUAGE@\n");
+	printk(KERN_INFO "imglanguage=@VISIONLANGUAGE@\n");
 #endif
 	return 0;
 }

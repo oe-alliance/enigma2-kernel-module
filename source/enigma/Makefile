@@ -9,7 +9,7 @@ modules:
 	$(MAKE) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C $(KSRC) M=$(shell pwd) modules
 
 strip:
-	$(CROSS_COMPILE)strip openvision.ko --strip-unneeded
+	$(CROSS_COMPILE)strip enigma.ko --strip-unneeded
 
 clean: $(clean_more)
 	rm -fr *.mod.c *.mod *.o .*.cmd *.ko *~
@@ -22,12 +22,12 @@ else
 EXTRA_CFLAGS += -Wenum-compare
 ccflags-y += -D__CHECK_ENDIAN__
 
-openvision-y := \
-	openvision_procfs_fileio.o \
-	openvision_procfs_info.o \
-	openvision_procfs_main.o
+enigma-y := \
+	enigma_procfs_fileio.o \
+	enigma_procfs_info.o \
+	enigma_procfs_main.o
 obj-m := \
-	openvision.o
+	enigma.o
 
 CFLAGS_trace.o := -I$(src)
 

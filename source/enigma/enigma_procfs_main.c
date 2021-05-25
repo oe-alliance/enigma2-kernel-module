@@ -1,119 +1,123 @@
-#include "openvision_procfs.h"
+#include "enigma_procfs.h"
 
 #define OV_PROC_PERMISSION 0444
 
 struct ProcStructure_s ovProc[] =
 {
-	{cProcDir, "openvision", NULL, NULL, NULL, NULL, ""},
-	{cProcEntry, "openvision/model", OV_PROC_PERMISSION, get_ov_model, NULL, NULL, ""},
+	{cProcDir, "enigma", NULL, NULL, NULL, NULL, ""},
+	{cProcEntry, "enigma/model", OV_PROC_PERMISSION, get_ov_model, NULL, NULL, ""},
 	//getBoxType
-	{cProcEntry, "openvision/brand", OV_PROC_PERMISSION, get_ov_brand, NULL, NULL, ""},
+	{cProcEntry, "enigma/displaymodel", OV_PROC_PERMISSION, get_ov_displaymodel, NULL, NULL, ""},
+	//getDisplayModel
+	{cProcEntry, "enigma/brand", OV_PROC_PERMISSION, get_ov_brand, NULL, NULL, ""},
 	//getBoxBrand
-	{cProcEntry, "openvision/platform", OV_PROC_PERMISSION, get_ov_platform, NULL, NULL, ""},
+	{cProcEntry, "enigma/displaybrand", OV_PROC_PERMISSION, get_ov_displaybrand, NULL, NULL, ""},
+	//getDisplayBrand
+	{cProcEntry, "enigma/platform", OV_PROC_PERMISSION, get_ov_platform, NULL, NULL, ""},
 	//getMachineBuild
-	{cProcEntry, "openvision/visionversion", OV_PROC_PERMISSION, get_ov_visionversion, NULL, NULL, ""},
-	//getVisionVersion
-	{cProcEntry, "openvision/visionrevision", OV_PROC_PERMISSION, get_ov_visionrevision, NULL, NULL, ""},
-	//getVisionRevision
-	{cProcEntry, "openvision/visionlanguage", OV_PROC_PERMISSION, get_ov_visionlanguage, NULL, NULL, ""},
-	//new
-	{cProcEntry, "openvision/developername", OV_PROC_PERMISSION, get_ov_developername, NULL, NULL, ""},
+	{cProcEntry, "enigma/imgversion", OV_PROC_PERMISSION, get_ov_imgversion, NULL, NULL, ""},
+	//getIMGVersion
+	{cProcEntry, "enigma/imgrevision", OV_PROC_PERMISSION, get_ov_imgrevision, NULL, NULL, ""},
+	//getIMGRevision
+	{cProcEntry, "enigma/imglanguage", OV_PROC_PERMISSION, get_ov_imglanguage, NULL, NULL, ""},
+	//getIMGLanguage
+	{cProcEntry, "enigma/developername", OV_PROC_PERMISSION, get_ov_developername, NULL, NULL, ""},
 	//getDeveloperName
-	{cProcEntry, "openvision/feedsurl", OV_PROC_PERMISSION, get_ov_feedsurl, NULL, NULL, ""},
+	{cProcEntry, "enigma/feedsurl", OV_PROC_PERMISSION, get_ov_feedsurl, NULL, NULL, ""},
 	//getFeedsUrl
-	{cProcEntry, "openvision/distro", OV_PROC_PERMISSION, get_ov_distro, NULL, NULL, ""},
+	{cProcEntry, "enigma/distro", OV_PROC_PERMISSION, get_ov_distro, NULL, NULL, ""},
 	//getImageDistro
-	{cProcEntry, "openvision/oe", OV_PROC_PERMISSION, get_ov_oe, NULL, NULL, ""},
+	{cProcEntry, "enigma/oe", OV_PROC_PERMISSION, get_ov_oe, NULL, NULL, ""},
 	//getOEVersion
-	{cProcEntry, "openvision/kernel", OV_PROC_PERMISSION, get_ov_kernel, NULL, NULL, ""},
+	{cProcEntry, "enigma/kernel", OV_PROC_PERMISSION, get_ov_kernel, NULL, NULL, ""},
 	//getKernelVersion
-	{cProcEntry, "openvision/python", OV_PROC_PERMISSION, get_ov_python, NULL, NULL, ""},
+	{cProcEntry, "enigma/python", OV_PROC_PERMISSION, get_ov_python, NULL, NULL, ""},
 	//new
-	{cProcEntry, "openvision/mediaservice", OV_PROC_PERMISSION, get_ov_mediaservice, NULL, NULL, ""},
+	{cProcEntry, "enigma/mediaservice", OV_PROC_PERMISSION, get_ov_mediaservice, NULL, NULL, ""},
 	//getE2Service
-	{cProcEntry, "openvision/multilib", OV_PROC_PERMISSION, get_ov_multilib, NULL, NULL, ""},
+	{cProcEntry, "enigma/multilib", OV_PROC_PERMISSION, get_ov_multilib, NULL, NULL, ""},
 	//getHaveMultiLib
-	{cProcEntry, "openvision/architecture", OV_PROC_PERMISSION, get_ov_architecture, NULL, NULL, ""},
+	{cProcEntry, "enigma/architecture", OV_PROC_PERMISSION, get_ov_architecture, NULL, NULL, ""},
 	//getImageArch
-	{cProcEntry, "openvision/socfamily", OV_PROC_PERMISSION, get_ov_socfamily, NULL, NULL, ""},
+	{cProcEntry, "enigma/socfamily", OV_PROC_PERMISSION, get_ov_socfamily, NULL, NULL, ""},
 	//getSoCFamily
-	{cProcEntry, "openvision/blindscanbinary", OV_PROC_PERMISSION, get_ov_blindscanbinary, NULL, NULL, ""},
+	{cProcEntry, "enigma/blindscanbinary", OV_PROC_PERMISSION, get_ov_blindscanbinary, NULL, NULL, ""},
 	//getBlindscanBin
-	{cProcEntry, "openvision/rctype", OV_PROC_PERMISSION, get_ov_rctype, NULL, NULL, ""},
+	{cProcEntry, "enigma/rctype", OV_PROC_PERMISSION, get_ov_rctype, NULL, NULL, ""},
 	//getRCType
-	{cProcEntry, "openvision/rcname", OV_PROC_PERMISSION, get_ov_rcname, NULL, NULL, ""},
+	{cProcEntry, "enigma/rcname", OV_PROC_PERMISSION, get_ov_rcname, NULL, NULL, ""},
 	//getRCName
-	{cProcEntry, "openvision/rcidnum", OV_PROC_PERMISSION, get_ov_rcidnum, NULL, NULL, ""},
+	{cProcEntry, "enigma/rcidnum", OV_PROC_PERMISSION, get_ov_rcidnum, NULL, NULL, ""},
 	//getRCIDNum
-	{cProcEntry, "openvision/smallflash", OV_PROC_PERMISSION, get_ov_smallflash, NULL, NULL, ""},
+	{cProcEntry, "enigma/smallflash", OV_PROC_PERMISSION, get_ov_smallflash, NULL, NULL, ""},
 	//getHaveSmallFlash
-	{cProcEntry, "openvision/middleflash", OV_PROC_PERMISSION, get_ov_middleflash, NULL, NULL, ""},
+	{cProcEntry, "enigma/middleflash", OV_PROC_PERMISSION, get_ov_middleflash, NULL, NULL, ""},
 	//getHaveMiddleFlash
-	{cProcEntry, "openvision/imagedir", OV_PROC_PERMISSION, get_ov_imagedir, NULL, NULL, ""},
+	{cProcEntry, "enigma/imagedir", OV_PROC_PERMISSION, get_ov_imagedir, NULL, NULL, ""},
 	//getImageFolder
-	{cProcEntry, "openvision/imagefs", OV_PROC_PERMISSION, get_ov_imagefs, NULL, NULL, ""},
+	{cProcEntry, "enigma/imagefs", OV_PROC_PERMISSION, get_ov_imagefs, NULL, NULL, ""},
 	//getImageFileSystem
-	{cProcEntry, "openvision/mtdbootfs", OV_PROC_PERMISSION, get_ov_mtdbootfs, NULL, NULL, ""},
+	{cProcEntry, "enigma/mtdbootfs", OV_PROC_PERMISSION, get_ov_mtdbootfs, NULL, NULL, ""},
 	//getMachineMtdBoot
-	{cProcEntry, "openvision/mtdrootfs", OV_PROC_PERMISSION, get_ov_mtdrootfs, NULL, NULL, ""},
+	{cProcEntry, "enigma/mtdrootfs", OV_PROC_PERMISSION, get_ov_mtdrootfs, NULL, NULL, ""},
 	//getMachineMtdRoot
-	{cProcEntry, "openvision/mtdkernel", OV_PROC_PERMISSION, get_ov_mtdkernel, NULL, NULL, ""},
+	{cProcEntry, "enigma/mtdkernel", OV_PROC_PERMISSION, get_ov_mtdkernel, NULL, NULL, ""},
 	//getMachineMtdKernel
-	{cProcEntry, "openvision/rootfile", OV_PROC_PERMISSION, get_ov_rootfile, NULL, NULL, ""},
+	{cProcEntry, "enigma/rootfile", OV_PROC_PERMISSION, get_ov_rootfile, NULL, NULL, ""},
 	//getMachineRootFile
-	{cProcEntry, "openvision/kernelfile", OV_PROC_PERMISSION, get_ov_kernelfile, NULL, NULL, ""},
+	{cProcEntry, "enigma/kernelfile", OV_PROC_PERMISSION, get_ov_kernelfile, NULL, NULL, ""},
 	//getMachineKernelFile
-	{cProcEntry, "openvision/mkubifs", OV_PROC_PERMISSION, get_ov_mkubifs, NULL, NULL, ""},
+	{cProcEntry, "enigma/mkubifs", OV_PROC_PERMISSION, get_ov_mkubifs, NULL, NULL, ""},
 	//getMachineMKUBIFS
-	{cProcEntry, "openvision/ubinize", OV_PROC_PERMISSION, get_ov_ubinize, NULL, NULL, ""},
+	{cProcEntry, "enigma/ubinize", OV_PROC_PERMISSION, get_ov_ubinize, NULL, NULL, ""},
 	//getMachineUBINIZE
-	{cProcEntry, "openvision/forcemode", OV_PROC_PERMISSION, get_ov_forcemode, NULL, NULL, ""},
+	{cProcEntry, "enigma/forcemode", OV_PROC_PERMISSION, get_ov_forcemode, NULL, NULL, ""},
 	//getForceMode
-	{cProcEntry, "openvision/compiledate", OV_PROC_PERMISSION, get_ov_compiledate, NULL, NULL, ""},
+	{cProcEntry, "enigma/compiledate", OV_PROC_PERMISSION, get_ov_compiledate, NULL, NULL, ""},
 	//new
-	{cProcEntry, "openvision/fpu", OV_PROC_PERMISSION, get_ov_fpu, NULL, NULL, ""},
+	{cProcEntry, "enigma/fpu", OV_PROC_PERMISSION, get_ov_fpu, NULL, NULL, ""},
 	//getImageFPU
-	{cProcEntry, "openvision/displaytype", OV_PROC_PERMISSION, get_ov_displaytype, NULL, NULL, ""},
+	{cProcEntry, "enigma/displaytype", OV_PROC_PERMISSION, get_ov_displaytype, NULL, NULL, ""},
 	//getDisplayType
-	{cProcEntry, "openvision/transcoding", OV_PROC_PERMISSION, get_ov_transcoding, NULL, NULL, ""},
+	{cProcEntry, "enigma/transcoding", OV_PROC_PERMISSION, get_ov_transcoding, NULL, NULL, ""},
 	//getHaveTranscoding
-	{cProcEntry, "openvision/multitranscoding", OV_PROC_PERMISSION, get_ov_multitranscoding, NULL, NULL, ""},
+	{cProcEntry, "enigma/multitranscoding", OV_PROC_PERMISSION, get_ov_multitranscoding, NULL, NULL, ""},
 	//getHaveMultiTranscoding
-	{cProcEntry, "openvision/hdmi", OV_PROC_PERMISSION, get_ov_hdmi, NULL, NULL, ""},
+	{cProcEntry, "enigma/hdmi", OV_PROC_PERMISSION, get_ov_hdmi, NULL, NULL, ""},
 	//getHaveHDMI
-	{cProcEntry, "openvision/yuv", OV_PROC_PERMISSION, get_ov_yuv, NULL, NULL, ""},
+	{cProcEntry, "enigma/yuv", OV_PROC_PERMISSION, get_ov_yuv, NULL, NULL, ""},
 	//getHaveYUV
-	{cProcEntry, "openvision/rca", OV_PROC_PERMISSION, get_ov_rca, NULL, NULL, ""},
+	{cProcEntry, "enigma/rca", OV_PROC_PERMISSION, get_ov_rca, NULL, NULL, ""},
 	//getHaveRCA
-	{cProcEntry, "openvision/avjack", OV_PROC_PERMISSION, get_ov_avjack, NULL, NULL, ""},
+	{cProcEntry, "enigma/avjack", OV_PROC_PERMISSION, get_ov_avjack, NULL, NULL, ""},
 	//getHaveAVJACK
-	{cProcEntry, "openvision/scart", OV_PROC_PERMISSION, get_ov_scart, NULL, NULL, ""},
+	{cProcEntry, "enigma/scart", OV_PROC_PERMISSION, get_ov_scart, NULL, NULL, ""},
 	//getHaveSCART
-	{cProcEntry, "openvision/dvi", OV_PROC_PERMISSION, get_ov_dvi, NULL, NULL, ""},
+	{cProcEntry, "enigma/dvi", OV_PROC_PERMISSION, get_ov_dvi, NULL, NULL, ""},
 	//getHaveDVI
-	{cProcEntry, "openvision/svideo", OV_PROC_PERMISSION, get_ov_svideo, NULL, NULL, ""},
+	{cProcEntry, "enigma/svideo", OV_PROC_PERMISSION, get_ov_svideo, NULL, NULL, ""},
 	//getHaveSVIDEO
-	{cProcEntry, "openvision/hdmihdin", OV_PROC_PERMISSION, get_ov_hdmihdin, NULL, NULL, ""},
+	{cProcEntry, "enigma/hdmihdin", OV_PROC_PERMISSION, get_ov_hdmihdin, NULL, NULL, ""},
 	//getHaveHDMIinHD
-	{cProcEntry, "openvision/hdmifhdin", OV_PROC_PERMISSION, get_ov_hdmifhdin, NULL, NULL, ""},
+	{cProcEntry, "enigma/hdmifhdin", OV_PROC_PERMISSION, get_ov_hdmifhdin, NULL, NULL, ""},
 	//getHaveHDMIinFHD
-	{cProcEntry, "openvision/wol", OV_PROC_PERMISSION, get_ov_wol, NULL, NULL, ""},
+	{cProcEntry, "enigma/wol", OV_PROC_PERMISSION, get_ov_wol, NULL, NULL, ""},
 	//getHaveWOL
-	{cProcEntry, "openvision/ci", OV_PROC_PERMISSION, get_ov_ci, NULL, NULL, ""},
+	{cProcEntry, "enigma/ci", OV_PROC_PERMISSION, get_ov_ci, NULL, NULL, ""},
 	//getHaveCI
-	{cProcEntry, "openvision/vfdsymbol", OV_PROC_PERMISSION, get_ov_vfdsymbol, NULL, NULL, ""},
+	{cProcEntry, "enigma/vfdsymbol", OV_PROC_PERMISSION, get_ov_vfdsymbol, NULL, NULL, ""},
 	//getHaveVFDSymbol
-	{cProcEntry, "openvision/fhdskin", OV_PROC_PERMISSION, get_ov_fhdskin, NULL, NULL, ""},
+	{cProcEntry, "enigma/fhdskin", OV_PROC_PERMISSION, get_ov_fhdskin, NULL, NULL, ""},
 	//getFHDSkin
-	{cProcEntry, "openvision/dboxlcd", OV_PROC_PERMISSION, get_ov_dboxlcd, NULL, NULL, ""},
+	{cProcEntry, "enigma/dboxlcd", OV_PROC_PERMISSION, get_ov_dboxlcd, NULL, NULL, ""},
 	//getDBoxLCD
-	{cProcEntry, "openvision/imageversion", OV_PROC_PERMISSION, get_ov_imageversion, NULL, NULL, ""},
+	{cProcEntry, "enigma/imageversion", OV_PROC_PERMISSION, get_ov_imageversion, NULL, NULL, ""},
 	//getImageVersion
-	{cProcEntry, "openvision/imagebuild", OV_PROC_PERMISSION, get_ov_imagebuild, NULL, NULL, ""},
+	{cProcEntry, "enigma/imagebuild", OV_PROC_PERMISSION, get_ov_imagebuild, NULL, NULL, ""},
 	//getImageBuild
-	{cProcEntry, "openvision/imagedevbuild", OV_PROC_PERMISSION, get_ov_imagedevbuild, NULL, NULL, ""},
+	{cProcEntry, "enigma/imagedevbuild", OV_PROC_PERMISSION, get_ov_imagedevbuild, NULL, NULL, ""},
 	//getImageDevBuild
-	{cProcEntry, "openvision/imagetype", OV_PROC_PERMISSION, get_ov_imagetype, NULL, NULL, ""}
+	{cProcEntry, "enigma/imagetype", OV_PROC_PERMISSION, get_ov_imagetype, NULL, NULL, ""}
 	//getImageType
 };
 
@@ -276,11 +280,13 @@ static const struct file_operations ovprocfs_fops = {
 void ov_kernel_info(void)
 {
 	printk(KERN_INFO "model=@MACHINE@\n");
+	printk(KERN_INFO "displaymodel=@DISPLAY_MODEL@\n");
 	printk(KERN_INFO "brand=@BOX_BRAND@\n");
+	printk(KERN_INFO "displaybrand=@DISPLAY_BRAND@\n");
 	printk(KERN_INFO "platform=@STB_PLATFORM@\n");
-	printk(KERN_INFO "visionversion=@VISIONVERSION@\n");
-	printk(KERN_INFO "visionrevision=@VISIONREVISION@\n");
-	printk(KERN_INFO "visionlanguage=@VISIONLANGUAGE@\n");
+	printk(KERN_INFO "imgversion=@VISIONVERSION@\n");
+	printk(KERN_INFO "imgrevision=@VISIONREVISION@\n");
+	printk(KERN_INFO "imglanguage=@VISIONLANGUAGE@\n");
 	printk(KERN_INFO "developername=@DEVELOPER_NAME@\n");
 	printk(KERN_INFO "feedsurl=@DISTRO_FEED_URI@\n");
 	printk(KERN_INFO "distro=@DISTRO_NAME@\n");
@@ -384,5 +390,5 @@ module_init(ovprocfs_init_module);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Open Vision developers");
-MODULE_DESCRIPTION("Open Vision information module\nmodel=@MACHINE@\nbrand=@BOX_BRAND@\nplatform=@STB_PLATFORM@\nvisionversion=@VISIONVERSION@\nvisionrevision=@VISIONREVISION@\nvisionlanguage=@VISIONLANGUAGE@\ndevelopername=@DEVELOPER_NAME@\nfeedsurl=@DISTRO_FEED_URI@\ndistro=@DISTRO_NAME@\noe=@BUILD_VERSION@\nkernel=@KERNELVERSION@\npython=@PREFERRED_VERSION_python@\nmediaservice=@PREFERRED_PROVIDER_virtual/enigma2-mediaservice@\nmultilib=@HAVE_MULTILIB@\narchitecture=@DEFAULTTUNE@\nsocfamily=@SOC_FAMILY@\nblindscanbinary=@BLINDSCAN_BINARY@\nrctype=@RCTYPE@\nrcname=@RCNAME@\nrcidnum=@RCIDNUM@\nsmallflash=@HAVE_SMALLFLASH@\nmiddleflash=@HAVE_MIDDLEFLASH@\nimagedir=@IMAGEDIR@\nimagefs=@IMAGE_FSTYPES@\nmtdbootfs=@MTD_BOOTFS@\nmtdrootfs=@MTD_ROOTFS@\nmtdkernel=@MTD_KERNEL@\nrootfile=@ROOTFS_FILE@\nkernelfile=@KERNEL_FILE@\nmkubifs=@MKUBIFS_ARGS@\nubinize=@UBINIZE_ARGS@\nforcemode=@FORCE@\ncompiledate=@DATE@\nfpu=@TARGET_FPU@\ndisplaytype=@DISPLAY_TYPE@\ntranscoding=@HAVE_TRANSCODING@\nmultitranscoding=@HAVE_MULTITRANSCODING@\nhdmi=@HAVE_HDMI@\nyuv=@HAVE_YUV@\nrca=@HAVE_RCA@\navjack=@HAVE_AV_JACK@\nscart=@HAVE_SCART@\ndvi=@HAVE_DVI@\nsvideo=@HAVE_SVIDEO@\nhdmihdin=@HAVE_HDMI_IN_HD@\nhdmifhdin=@HAVE_HDMI_IN_FHD@\nwol=@HAVE_WOL@\nci=@HAVE_CI@\nvfdsymbol=@HAVE_VFDSYMBOL@\nfhdskin=@HAVE_FHDSKIN@\ndboxlcd=@SUPPORT_DBOXLCD@\nimageversion=@DISTRO_VERSION@\nimagebuild=@BUILD_VERSION@\nimagedevbuild=@DEVELOPER_BUILD_VERSION@\nimagetype=@DISTRO_TYPE@");
+MODULE_DESCRIPTION("Open Vision information module\nmodel=@MACHINE@\ndisplaymodel=@DISPLAY_MODEL@\nbrand=@BOX_BRAND@\ndisplaybrand=@DISPLAY_BRAND@\nplatform=@STB_PLATFORM@\nimgversion=@VISIONVERSION@\nimgrevision=@VISIONREVISION@\nimglanguage=@VISIONLANGUAGE@\ndevelopername=@DEVELOPER_NAME@\nfeedsurl=@DISTRO_FEED_URI@\ndistro=@DISTRO_NAME@\noe=@BUILD_VERSION@\nkernel=@KERNELVERSION@\npython=@PREFERRED_VERSION_python@\nmediaservice=@PREFERRED_PROVIDER_virtual/enigma2-mediaservice@\nmultilib=@HAVE_MULTILIB@\narchitecture=@DEFAULTTUNE@\nsocfamily=@SOC_FAMILY@\nblindscanbinary=@BLINDSCAN_BINARY@\nrctype=@RCTYPE@\nrcname=@RCNAME@\nrcidnum=@RCIDNUM@\nsmallflash=@HAVE_SMALLFLASH@\nmiddleflash=@HAVE_MIDDLEFLASH@\nimagedir=@IMAGEDIR@\nimagefs=@IMAGE_FSTYPES@\nmtdbootfs=@MTD_BOOTFS@\nmtdrootfs=@MTD_ROOTFS@\nmtdkernel=@MTD_KERNEL@\nrootfile=@ROOTFS_FILE@\nkernelfile=@KERNEL_FILE@\nmkubifs=@MKUBIFS_ARGS@\nubinize=@UBINIZE_ARGS@\nforcemode=@FORCE@\ncompiledate=@DATE@\nfpu=@TARGET_FPU@\ndisplaytype=@DISPLAY_TYPE@\ntranscoding=@HAVE_TRANSCODING@\nmultitranscoding=@HAVE_MULTITRANSCODING@\nhdmi=@HAVE_HDMI@\nyuv=@HAVE_YUV@\nrca=@HAVE_RCA@\navjack=@HAVE_AV_JACK@\nscart=@HAVE_SCART@\ndvi=@HAVE_DVI@\nsvideo=@HAVE_SVIDEO@\nhdmihdin=@HAVE_HDMI_IN_HD@\nhdmifhdin=@HAVE_HDMI_IN_FHD@\nwol=@HAVE_WOL@\nci=@HAVE_CI@\nvfdsymbol=@HAVE_VFDSYMBOL@\nfhdskin=@HAVE_FHDSKIN@\ndboxlcd=@SUPPORT_DBOXLCD@\nimageversion=@DISTRO_VERSION@\nimagebuild=@BUILD_VERSION@\nimagedevbuild=@DEVELOPER_BUILD_VERSION@\nimagetype=@DISTRO_TYPE@");
 MODULE_VERSION("@VISIONVERSION@-@VISIONREVISION@");
