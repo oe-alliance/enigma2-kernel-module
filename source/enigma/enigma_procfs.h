@@ -95,6 +95,7 @@ int get_svideo(struct seq_file *m, void* data);
 int get_hdmihdin(struct seq_file *m, void* data);
 int get_hdmifhdin(struct seq_file *m, void* data);
 int get_wol(struct seq_file *m, void* data);
+int get_wwol(struct seq_file *m, void* data);
 int get_ci(struct seq_file *m, void* data);
 int get_vfdsymbol(struct seq_file *m, void* data);
 int get_fhdskin(struct seq_file *m, void* data);

@@ -65,9 +65,9 @@ int get_imgrevision(struct seq_file *m, void* data)
 
 int get_imglanguage(struct seq_file *m, void* data)
 {
-	seq_printf(m, "@VISIONLANGUAGE@\n");
+	seq_printf(m, "@LANGUAGE@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "imglanguage=@VISIONLANGUAGE@\n");
+	printk(KERN_INFO "imglanguage=@LANGUAGE@\n");
 #endif
 	return 0;
 }
@@ -101,9 +101,9 @@ int get_distro(struct seq_file *m, void* data)
 
 int get_oe(struct seq_file *m, void* data)
 {
-	seq_printf(m, "@BUILD_VERSION@\n");
+	seq_printf(m, "@OE_VERSION@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "oe=@BUILD_VERSION@\n");
+	printk(KERN_INFO "oe=@OE_VERSION@\n");
 #endif
 	return 0;
 }
@@ -437,6 +437,15 @@ int get_wol(struct seq_file *m, void* data)
 	seq_printf(m, "@HAVE_WOL@\n");
 #ifdef DEBUG
 	printk(KERN_INFO "wol=@HAVE_WOL@\n");
+#endif
+	return 0;
+}
+
+int get_wwol(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_WWOL@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "wwol=@HAVE_WWOL@\n");
 #endif
 	return 0;
 }
