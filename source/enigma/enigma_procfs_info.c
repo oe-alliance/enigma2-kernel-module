@@ -1,6 +1,6 @@
 #include "enigma_procfs.h"
 
-int get_ov_model(struct seq_file *m, void* data)
+int get_model(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@MACHINE@\n");
 #ifdef DEBUG
@@ -9,7 +9,7 @@ int get_ov_model(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_displaymodel(struct seq_file *m, void* data)
+int get_displaymodel(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DISPLAY_MODEL@\n");
 #ifdef DEBUG
@@ -18,7 +18,7 @@ int get_ov_displaymodel(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_brand(struct seq_file *m, void* data)
+int get_brand(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@BOX_BRAND@\n");
 #ifdef DEBUG
@@ -27,7 +27,7 @@ int get_ov_brand(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_displaybrand(struct seq_file *m, void* data)
+int get_displaybrand(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DISPLAY_BRAND@\n");
 #ifdef DEBUG
@@ -36,7 +36,7 @@ int get_ov_displaybrand(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_platform(struct seq_file *m, void* data)
+int get_platform(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@STB_PLATFORM@\n");
 #ifdef DEBUG
@@ -45,25 +45,25 @@ int get_ov_platform(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_imgversion(struct seq_file *m, void* data)
+int get_imgversion(struct seq_file *m, void* data)
 {
-	seq_printf(m, "@VISIONVERSION@\n");
+	seq_printf(m, "@IMAGE_VERSION@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "imgversion=@VISIONVERSION@\n");
+	printk(KERN_INFO "imgversion=@IMAGE_VERSION@\n");
 #endif
 	return 0;
 }
 
-int get_ov_imgrevision(struct seq_file *m, void* data)
+int get_imgrevision(struct seq_file *m, void* data)
 {
-	seq_printf(m, "@VISIONREVISION@\n");
+	seq_printf(m, "@BUILD_VERSION@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "imgrevision=@VISIONREVISION@\n");
+	printk(KERN_INFO "imgrevision=@BUILD_VERSION@\n");
 #endif
 	return 0;
 }
 
-int get_ov_imglanguage(struct seq_file *m, void* data)
+int get_imglanguage(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@VISIONLANGUAGE@\n");
 #ifdef DEBUG
@@ -72,7 +72,7 @@ int get_ov_imglanguage(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_developername(struct seq_file *m, void* data)
+int get_developername(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DEVELOPER_NAME@\n");
 #ifdef DEBUG
@@ -81,7 +81,7 @@ int get_ov_developername(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_feedsurl(struct seq_file *m, void* data)
+int get_feedsurl(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DISTRO_FEED_URI@\n");
 #ifdef DEBUG
@@ -90,7 +90,7 @@ int get_ov_feedsurl(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_distro(struct seq_file *m, void* data)
+int get_distro(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DISTRO_NAME@\n");
 #ifdef DEBUG
@@ -99,7 +99,7 @@ int get_ov_distro(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_oe(struct seq_file *m, void* data)
+int get_oe(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@BUILD_VERSION@\n");
 #ifdef DEBUG
@@ -108,7 +108,7 @@ int get_ov_oe(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_kernel(struct seq_file *m, void* data)
+int get_kernel(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@KERNELVERSION@\n");
 #ifdef DEBUG
@@ -117,7 +117,7 @@ int get_ov_kernel(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_python(struct seq_file *m, void* data)
+int get_python(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@PREFERRED_VERSION_python@\n");
 #ifdef DEBUG
@@ -126,7 +126,7 @@ int get_ov_python(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_mediaservice(struct seq_file *m, void* data)
+int get_mediaservice(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@PREFERRED_PROVIDER_virtual/enigma2-mediaservice@\n");
 #ifdef DEBUG
@@ -135,7 +135,7 @@ int get_ov_mediaservice(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_multilib(struct seq_file *m, void* data)
+int get_multilib(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_MULTILIB@\n");
 #ifdef DEBUG
@@ -144,7 +144,7 @@ int get_ov_multilib(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_architecture(struct seq_file *m, void* data)
+int get_architecture(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DEFAULTTUNE@\n");
 #ifdef DEBUG
@@ -153,7 +153,7 @@ int get_ov_architecture(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_socfamily(struct seq_file *m, void* data)
+int get_socfamily(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@SOC_FAMILY@\n");
 #ifdef DEBUG
@@ -162,7 +162,7 @@ int get_ov_socfamily(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_blindscanbinary(struct seq_file *m, void* data)
+int get_blindscanbinary(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@BLINDSCAN_BINARY@\n");
 #ifdef DEBUG
@@ -171,7 +171,7 @@ int get_ov_blindscanbinary(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_rctype(struct seq_file *m, void* data)
+int get_rctype(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@RCTYPE@\n");
 #ifdef DEBUG
@@ -180,7 +180,7 @@ int get_ov_rctype(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_rcname(struct seq_file *m, void* data)
+int get_rcname(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@RCNAME@\n");
 #ifdef DEBUG
@@ -189,7 +189,7 @@ int get_ov_rcname(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_rcidnum(struct seq_file *m, void* data)
+int get_rcidnum(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@RCIDNUM@\n");
 #ifdef DEBUG
@@ -198,7 +198,7 @@ int get_ov_rcidnum(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_smallflash(struct seq_file *m, void* data)
+int get_smallflash(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_SMALLFLASH@\n");
 #ifdef DEBUG
@@ -207,7 +207,7 @@ int get_ov_smallflash(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_middleflash(struct seq_file *m, void* data)
+int get_middleflash(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_MIDDLEFLASH@\n");
 #ifdef DEBUG
@@ -216,7 +216,7 @@ int get_ov_middleflash(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_imagedir(struct seq_file *m, void* data)
+int get_imagedir(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@IMAGEDIR@\n");
 #ifdef DEBUG
@@ -225,7 +225,7 @@ int get_ov_imagedir(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_imagefs(struct seq_file *m, void* data)
+int get_imagefs(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@IMAGE_FSTYPES@\n");
 #ifdef DEBUG
@@ -234,7 +234,7 @@ int get_ov_imagefs(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_mtdbootfs(struct seq_file *m, void* data)
+int get_mtdbootfs(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@MTD_BOOTFS@\n");
 #ifdef DEBUG
@@ -243,7 +243,7 @@ int get_ov_mtdbootfs(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_mtdrootfs(struct seq_file *m, void* data)
+int get_mtdrootfs(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@MTD_ROOTFS@\n");
 #ifdef DEBUG
@@ -252,7 +252,7 @@ int get_ov_mtdrootfs(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_mtdkernel(struct seq_file *m, void* data)
+int get_mtdkernel(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@MTD_KERNEL@\n");
 #ifdef DEBUG
@@ -261,7 +261,7 @@ int get_ov_mtdkernel(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_rootfile(struct seq_file *m, void* data)
+int get_rootfile(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@ROOTFS_FILE@\n");
 #ifdef DEBUG
@@ -270,7 +270,7 @@ int get_ov_rootfile(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_kernelfile(struct seq_file *m, void* data)
+int get_kernelfile(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@KERNEL_FILE@\n");
 #ifdef DEBUG
@@ -279,7 +279,7 @@ int get_ov_kernelfile(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_mkubifs(struct seq_file *m, void* data)
+int get_mkubifs(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@MKUBIFS_ARGS@\n");
 #ifdef DEBUG
@@ -288,7 +288,7 @@ int get_ov_mkubifs(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_ubinize(struct seq_file *m, void* data)
+int get_ubinize(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@UBINIZE_ARGS@\n");
 #ifdef DEBUG
@@ -297,7 +297,7 @@ int get_ov_ubinize(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_forcemode(struct seq_file *m, void* data)
+int get_forcemode(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@FORCE@\n");
 #ifdef DEBUG
@@ -306,7 +306,7 @@ int get_ov_forcemode(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_compiledate(struct seq_file *m, void* data)
+int get_compiledate(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DATE@\n");
 #ifdef DEBUG
@@ -315,7 +315,7 @@ int get_ov_compiledate(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_fpu(struct seq_file *m, void* data)
+int get_fpu(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@TARGET_FPU@\n");
 #ifdef DEBUG
@@ -324,7 +324,7 @@ int get_ov_fpu(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_displaytype(struct seq_file *m, void* data)
+int get_displaytype(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DISPLAY_TYPE@\n");
 #ifdef DEBUG
@@ -333,7 +333,7 @@ int get_ov_displaytype(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_transcoding(struct seq_file *m, void* data)
+int get_transcoding(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_TRANSCODING@\n");
 #ifdef DEBUG
@@ -342,7 +342,7 @@ int get_ov_transcoding(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_multitranscoding(struct seq_file *m, void* data)
+int get_multitranscoding(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_MULTITRANSCODING@\n");
 #ifdef DEBUG
@@ -351,7 +351,7 @@ int get_ov_multitranscoding(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_hdmi(struct seq_file *m, void* data)
+int get_hdmi(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_HDMI@\n");
 #ifdef DEBUG
@@ -360,7 +360,7 @@ int get_ov_hdmi(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_yuv(struct seq_file *m, void* data)
+int get_yuv(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_YUV@\n");
 #ifdef DEBUG
@@ -369,7 +369,7 @@ int get_ov_yuv(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_rca(struct seq_file *m, void* data)
+int get_rca(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_RCA@\n");
 #ifdef DEBUG
@@ -378,7 +378,7 @@ int get_ov_rca(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_avjack(struct seq_file *m, void* data)
+int get_avjack(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_AV_JACK@\n");
 #ifdef DEBUG
@@ -387,7 +387,7 @@ int get_ov_avjack(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_scart(struct seq_file *m, void* data)
+int get_scart(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_SCART@\n");
 #ifdef DEBUG
@@ -396,7 +396,7 @@ int get_ov_scart(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_dvi(struct seq_file *m, void* data)
+int get_dvi(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_DVI@\n");
 #ifdef DEBUG
@@ -405,7 +405,7 @@ int get_ov_dvi(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_svideo(struct seq_file *m, void* data)
+int get_svideo(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_SVIDEO@\n");
 #ifdef DEBUG
@@ -414,7 +414,7 @@ int get_ov_svideo(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_hdmihdin(struct seq_file *m, void* data)
+int get_hdmihdin(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_HDMI_IN_HD@\n");
 #ifdef DEBUG
@@ -423,7 +423,7 @@ int get_ov_hdmihdin(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_hdmifhdin(struct seq_file *m, void* data)
+int get_hdmifhdin(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_HDMI_IN_FHD@\n");
 #ifdef DEBUG
@@ -432,7 +432,7 @@ int get_ov_hdmifhdin(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_wol(struct seq_file *m, void* data)
+int get_wol(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_WOL@\n");
 #ifdef DEBUG
@@ -441,7 +441,7 @@ int get_ov_wol(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_ci(struct seq_file *m, void* data)
+int get_ci(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_CI@\n");
 #ifdef DEBUG
@@ -450,7 +450,7 @@ int get_ov_ci(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_vfdsymbol(struct seq_file *m, void* data)
+int get_vfdsymbol(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_VFDSYMBOL@\n");
 #ifdef DEBUG
@@ -459,7 +459,7 @@ int get_ov_vfdsymbol(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_fhdskin(struct seq_file *m, void* data)
+int get_fhdskin(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_FHDSKIN@\n");
 #ifdef DEBUG
@@ -468,7 +468,7 @@ int get_ov_fhdskin(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_dboxlcd(struct seq_file *m, void* data)
+int get_dboxlcd(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@SUPPORT_DBOXLCD@\n");
 #ifdef DEBUG
@@ -477,7 +477,7 @@ int get_ov_dboxlcd(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_imageversion(struct seq_file *m, void* data)
+int get_imageversion(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DISTRO_VERSION@\n");
 #ifdef DEBUG
@@ -486,7 +486,7 @@ int get_ov_imageversion(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_imagebuild(struct seq_file *m, void* data)
+int get_imagebuild(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@BUILD_VERSION@\n");
 #ifdef DEBUG
@@ -495,7 +495,7 @@ int get_ov_imagebuild(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_imagedevbuild(struct seq_file *m, void* data)
+int get_imagedevbuild(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DEVELOPER_BUILD_VERSION@\n");
 #ifdef DEBUG
@@ -504,7 +504,7 @@ int get_ov_imagedevbuild(struct seq_file *m, void* data)
 	return 0;
 }
 
-int get_ov_imagetype(struct seq_file *m, void* data)
+int get_imagetype(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DISTRO_TYPE@\n");
 #ifdef DEBUG

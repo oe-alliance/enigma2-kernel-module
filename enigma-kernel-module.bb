@@ -1,15 +1,15 @@
-SUMMARY = "Open Vision information module for ${MACHINE}"
+SUMMARY = "Enigma kernel information module for ${MACHINE}"
 SECTION = "base"
 PRIORITY = "required"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://${WORKDIR}/git/LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 
-PV = "${VISIONVERSION}"
-PR = "${VISIONREVISION}"
+PV = "${IMAGE_VERSION}"
+PR = "${BUILD_VERSION}"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-SRC_URI = "git://github.com/OpenVisionE2/openvision-module.git;protocol=git"
+SRC_URI = "git://github.com/oe-alliance/enigma2-kernel-module.git;protocol=git"
 
 S = "${WORKDIR}/git/source/enigma"
 
@@ -23,8 +23,8 @@ do_configure_prepend(){
 	find ${S}/ -type f -name "*.c" | xargs -r -L1 sed -i "s|@BOX_BRAND@|${BOX_BRAND}|g"
 	find ${S}/ -type f -name "*.c" | xargs -r -L1 sed -i "s|@DISPLAY_BRAND@|${DISPLAY_BRAND}|g"
 	find ${S}/ -type f -name "*.c" | xargs -r -L1 sed -i "s|@STB_PLATFORM@|${STB_PLATFORM}|g"
-	find ${S}/ -type f -name "*.c" | xargs -r -L1 sed -i "s|@VISIONVERSION@|${VISIONVERSION}|g"
-	find ${S}/ -type f -name "*.c" | xargs -r -L1 sed -i "s|@VISIONREVISION@|${VISIONREVISION}|g"
+	find ${S}/ -type f -name "*.c" | xargs -r -L1 sed -i "s|@IMAGE_VERSION@|${IMAGE_VERSION}|g"
+	find ${S}/ -type f -name "*.c" | xargs -r -L1 sed -i "s|@BUILD_VERSION@|${BUILD_VERSION}|g"
 	find ${S}/ -type f -name "*.c" | xargs -r -L1 sed -i "s|@VISIONLANGUAGE@|${VISIONLANGUAGE}|g"
 	find ${S}/ -type f -name "*.c" | xargs -r -L1 sed -i "s|@DEVELOPER_NAME@|${DEVELOPER_NAME}|g"
 	find ${S}/ -type f -name "*.c" | xargs -r -L1 sed -i "s|@DISTRO_FEED_URI@|${DISTRO_FEED_URI}|g"
@@ -87,9 +87,9 @@ do_install[vardepsexclude] += "DATE"
 
 do_install() {
 	install -d ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/enigma
-	modinfo -d ${S}/enigma.ko > ${S}/openvision.txt
-	sed -i '1d' ${S}/openvision.txt
-	sort  ${S}/openvision.txt > openvision-${MACHINE}.txt
+	modinfo -d ${S}/enigma.ko > ${S}/enigma.txt
+	sed -i '1d' ${S}/enigma.txt
+	sort  ${S}/enigma.txt > enigma-${MACHINE}.txt
 	install -m 0644 ${S}/enigma.ko ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/enigma/
 	install -d ${D}${sysconfdir}/modules-load.d
 	echo "enigma" > ${D}${sysconfdir}/modules-load.d/zzzzenigma.conf
@@ -101,7 +101,7 @@ export KCFLAGS = "-Wno-error"
 
 do_deploy() {
 	install -d ${DEPLOY_DIR_IMAGE}
-	install -m 0644 ${S}/openvision-${MACHINE}.txt ${DEPLOY_DIR_IMAGE}/
+	install -m 0644 ${S}/enigma-${MACHINE}.txt ${DEPLOY_DIR_IMAGE}/
 }
 
 addtask deploy before do_build after do_install
