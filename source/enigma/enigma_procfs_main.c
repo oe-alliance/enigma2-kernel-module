@@ -103,7 +103,7 @@ struct ProcStructure_s enigmaProc[] =
 	//getHaveHDMIinFHD
 	{cProcEntry, "enigma/wol", ENIGMA_PROC_PERMISSION, get_enigma_wol, NULL, NULL, ""},
 	//getHaveWOL
-	{cProcEntry, "enigma/wwol", PROC_PERMISSION, get_enigma_wwol, NULL, NULL, ""},
+	{cProcEntry, "enigma/wwol", ENIGMA_PROC_PERMISSION, get_enigma_wwol, NULL, NULL, ""},
 	//getHaveWWOL
 	{cProcEntry, "enigma/ci", ENIGMA_PROC_PERMISSION, get_enigma_ci, NULL, NULL, ""},
 	//getHaveCI
