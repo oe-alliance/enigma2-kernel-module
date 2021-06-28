@@ -1,4 +1,4 @@
-menu "Open Vision enigma module"
+menu "Enigma module"
 
 config ENIGMAMODULE
         tristate "enigma module"
