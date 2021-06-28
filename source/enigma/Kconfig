@@ -1,4 +1,4 @@
-menu "Enigma kernel module"
+menu "Enigma module"
 
 config ENIGMAMODULE
         tristate "enigma module"

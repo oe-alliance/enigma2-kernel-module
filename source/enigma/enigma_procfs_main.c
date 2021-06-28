@@ -1,125 +1,125 @@
 #include "enigma_procfs.h"
 
-#define PROC_PERMISSION 0444
+#define ENIGMA_PROC_PERMISSION 0444
 
-struct ProcStructure_s eProc[] =
+struct ProcStructure_s enigmaProc[] =
 {
 	{cProcDir, "enigma", NULL, NULL, NULL, NULL, ""},
-	{cProcEntry, "enigma/model", PROC_PERMISSION, get_model, NULL, NULL, ""},
+	{cProcEntry, "enigma/model", ENIGMA_PROC_PERMISSION, get_enigma_model, NULL, NULL, ""},
 	//getBoxType
-	{cProcEntry, "enigma/displaymodel", PROC_PERMISSION, get_displaymodel, NULL, NULL, ""},
+	{cProcEntry, "enigma/displaymodel", ENIGMA_PROC_PERMISSION, get_enigma_displaymodel, NULL, NULL, ""},
 	//getDisplayModel
-	{cProcEntry, "enigma/brand", PROC_PERMISSION, get_brand, NULL, NULL, ""},
+	{cProcEntry, "enigma/brand", ENIGMA_PROC_PERMISSION, get_enigma_brand, NULL, NULL, ""},
 	//getBoxBrand
-	{cProcEntry, "enigma/displaybrand", PROC_PERMISSION, get_displaybrand, NULL, NULL, ""},
+	{cProcEntry, "enigma/displaybrand", ENIGMA_PROC_PERMISSION, get_enigma_displaybrand, NULL, NULL, ""},
 	//getDisplayBrand
-	{cProcEntry, "enigma/platform", PROC_PERMISSION, get_platform, NULL, NULL, ""},
+	{cProcEntry, "enigma/platform", ENIGMA_PROC_PERMISSION, get_enigma_platform, NULL, NULL, ""},
 	//getMachineBuild
-	{cProcEntry, "enigma/imgversion", PROC_PERMISSION, get_imgversion, NULL, NULL, ""},
+	{cProcEntry, "enigma/imgversion", ENIGMA_PROC_PERMISSION, get_enigma_imgversion, NULL, NULL, ""},
 	//getIMGVersion
-	{cProcEntry, "enigma/imgrevision", PROC_PERMISSION, get_imgrevision, NULL, NULL, ""},
+	{cProcEntry, "enigma/imgrevision", ENIGMA_PROC_PERMISSION, get_enigma_imgrevision, NULL, NULL, ""},
 	//getIMGRevision
-	{cProcEntry, "enigma/imglanguage", PROC_PERMISSION, get_imglanguage, NULL, NULL, ""},
+	{cProcEntry, "enigma/imglanguage", ENIGMA_PROC_PERMISSION, get_enigma_imglanguage, NULL, NULL, ""},
 	//getIMGLanguage
-	{cProcEntry, "enigma/developername", PROC_PERMISSION, get_developername, NULL, NULL, ""},
+	{cProcEntry, "enigma/developername", ENIGMA_PROC_PERMISSION, get_enigma_developername, NULL, NULL, ""},
 	//getDeveloperName
-	{cProcEntry, "enigma/feedsurl", PROC_PERMISSION, get_feedsurl, NULL, NULL, ""},
+	{cProcEntry, "enigma/feedsurl", ENIGMA_PROC_PERMISSION, get_enigma_feedsurl, NULL, NULL, ""},
 	//getFeedsUrl
-	{cProcEntry, "enigma/distro", PROC_PERMISSION, get_distro, NULL, NULL, ""},
+	{cProcEntry, "enigma/distro", ENIGMA_PROC_PERMISSION, get_enigma_distro, NULL, NULL, ""},
 	//getImageDistro
-	{cProcEntry, "enigma/oe", PROC_PERMISSION, get_oe, NULL, NULL, ""},
+	{cProcEntry, "enigma/oe", ENIGMA_PROC_PERMISSION, get_enigma_oe, NULL, NULL, ""},
 	//getOEVersion
-	{cProcEntry, "enigma/kernel", PROC_PERMISSION, get_kernel, NULL, NULL, ""},
+	{cProcEntry, "enigma/kernel", ENIGMA_PROC_PERMISSION, get_enigma_kernel, NULL, NULL, ""},
 	//getKernelVersion
-	{cProcEntry, "enigma/python", PROC_PERMISSION, get_python, NULL, NULL, ""},
+	{cProcEntry, "enigma/python", ENIGMA_PROC_PERMISSION, get_enigma_python, NULL, NULL, ""},
 	//new
-	{cProcEntry, "enigma/mediaservice", PROC_PERMISSION, get_mediaservice, NULL, NULL, ""},
+	{cProcEntry, "enigma/mediaservice", ENIGMA_PROC_PERMISSION, get_enigma_mediaservice, NULL, NULL, ""},
 	//getE2Service
-	{cProcEntry, "enigma/multilib", PROC_PERMISSION, get_multilib, NULL, NULL, ""},
+	{cProcEntry, "enigma/multilib", ENIGMA_PROC_PERMISSION, get_enigma_multilib, NULL, NULL, ""},
 	//getHaveMultiLib
-	{cProcEntry, "enigma/architecture", PROC_PERMISSION, get_architecture, NULL, NULL, ""},
+	{cProcEntry, "enigma/architecture", ENIGMA_PROC_PERMISSION, get_enigma_architecture, NULL, NULL, ""},
 	//getImageArch
-	{cProcEntry, "enigma/socfamily", PROC_PERMISSION, get_socfamily, NULL, NULL, ""},
+	{cProcEntry, "enigma/socfamily", ENIGMA_PROC_PERMISSION, get_enigma_socfamily, NULL, NULL, ""},
 	//getSoCFamily
-	{cProcEntry, "enigma/blindscanbinary", PROC_PERMISSION, get_blindscanbinary, NULL, NULL, ""},
+	{cProcEntry, "enigma/blindscanbinary", ENIGMA_PROC_PERMISSION, get_enigma_blindscanbinary, NULL, NULL, ""},
 	//getBlindscanBin
-	{cProcEntry, "enigma/rctype", PROC_PERMISSION, get_rctype, NULL, NULL, ""},
+	{cProcEntry, "enigma/rctype", ENIGMA_PROC_PERMISSION, get_enigma_rctype, NULL, NULL, ""},
 	//getRCType
-	{cProcEntry, "enigma/rcname", PROC_PERMISSION, get_rcname, NULL, NULL, ""},
+	{cProcEntry, "enigma/rcname", ENIGMA_PROC_PERMISSION, get_enigma_rcname, NULL, NULL, ""},
 	//getRCName
-	{cProcEntry, "enigma/rcidnum", PROC_PERMISSION, get_rcidnum, NULL, NULL, ""},
+	{cProcEntry, "enigma/rcidnum", ENIGMA_PROC_PERMISSION, get_enigma_rcidnum, NULL, NULL, ""},
 	//getRCIDNum
-	{cProcEntry, "enigma/smallflash", PROC_PERMISSION, get_smallflash, NULL, NULL, ""},
+	{cProcEntry, "enigma/smallflash", ENIGMA_PROC_PERMISSION, get_enigma_smallflash, NULL, NULL, ""},
 	//getHaveSmallFlash
-	{cProcEntry, "enigma/middleflash", PROC_PERMISSION, get_middleflash, NULL, NULL, ""},
+	{cProcEntry, "enigma/middleflash", ENIGMA_PROC_PERMISSION, get_enigma_middleflash, NULL, NULL, ""},
 	//getHaveMiddleFlash
-	{cProcEntry, "enigma/imagedir", PROC_PERMISSION, get_imagedir, NULL, NULL, ""},
+	{cProcEntry, "enigma/imagedir", ENIGMA_PROC_PERMISSION, get_enigma_imagedir, NULL, NULL, ""},
 	//getImageFolder
-	{cProcEntry, "enigma/imagefs", PROC_PERMISSION, get_imagefs, NULL, NULL, ""},
+	{cProcEntry, "enigma/imagefs", ENIGMA_PROC_PERMISSION, get_enigma_imagefs, NULL, NULL, ""},
 	//getImageFileSystem
-	{cProcEntry, "enigma/mtdbootfs", PROC_PERMISSION, get_mtdbootfs, NULL, NULL, ""},
+	{cProcEntry, "enigma/mtdbootfs", ENIGMA_PROC_PERMISSION, get_enigma_mtdbootfs, NULL, NULL, ""},
 	//getMachineMtdBoot
-	{cProcEntry, "enigma/mtdrootfs", PROC_PERMISSION, get_mtdrootfs, NULL, NULL, ""},
+	{cProcEntry, "enigma/mtdrootfs", ENIGMA_PROC_PERMISSION, get_enigma_mtdrootfs, NULL, NULL, ""},
 	//getMachineMtdRoot
-	{cProcEntry, "enigma/mtdkernel", PROC_PERMISSION, get_mtdkernel, NULL, NULL, ""},
+	{cProcEntry, "enigma/mtdkernel", ENIGMA_PROC_PERMISSION, get_enigma_mtdkernel, NULL, NULL, ""},
 	//getMachineMtdKernel
-	{cProcEntry, "enigma/rootfile", PROC_PERMISSION, get_rootfile, NULL, NULL, ""},
+	{cProcEntry, "enigma/rootfile", ENIGMA_PROC_PERMISSION, get_enigma_rootfile, NULL, NULL, ""},
 	//getMachineRootFile
-	{cProcEntry, "enigma/kernelfile", PROC_PERMISSION, get_kernelfile, NULL, NULL, ""},
+	{cProcEntry, "enigma/kernelfile", ENIGMA_PROC_PERMISSION, get_enigma_kernelfile, NULL, NULL, ""},
 	//getMachineKernelFile
-	{cProcEntry, "enigma/mkubifs", PROC_PERMISSION, get_mkubifs, NULL, NULL, ""},
+	{cProcEntry, "enigma/mkubifs", ENIGMA_PROC_PERMISSION, get_enigma_mkubifs, NULL, NULL, ""},
 	//getMachineMKUBIFS
-	{cProcEntry, "enigma/ubinize", PROC_PERMISSION, get_ubinize, NULL, NULL, ""},
+	{cProcEntry, "enigma/ubinize", ENIGMA_PROC_PERMISSION, get_enigma_ubinize, NULL, NULL, ""},
 	//getMachineUBINIZE
-	{cProcEntry, "enigma/forcemode", PROC_PERMISSION, get_forcemode, NULL, NULL, ""},
+	{cProcEntry, "enigma/forcemode", ENIGMA_PROC_PERMISSION, get_enigma_forcemode, NULL, NULL, ""},
 	//getForceMode
-	{cProcEntry, "enigma/compiledate", PROC_PERMISSION, get_compiledate, NULL, NULL, ""},
+	{cProcEntry, "enigma/compiledate", ENIGMA_PROC_PERMISSION, get_enigma_compiledate, NULL, NULL, ""},
 	//new
-	{cProcEntry, "enigma/fpu", PROC_PERMISSION, get_fpu, NULL, NULL, ""},
+	{cProcEntry, "enigma/fpu", ENIGMA_PROC_PERMISSION, get_enigma_fpu, NULL, NULL, ""},
 	//getImageFPU
-	{cProcEntry, "enigma/displaytype", PROC_PERMISSION, get_displaytype, NULL, NULL, ""},
+	{cProcEntry, "enigma/displaytype", ENIGMA_PROC_PERMISSION, get_enigma_displaytype, NULL, NULL, ""},
 	//getDisplayType
-	{cProcEntry, "enigma/transcoding", PROC_PERMISSION, get_transcoding, NULL, NULL, ""},
+	{cProcEntry, "enigma/transcoding", ENIGMA_PROC_PERMISSION, get_enigma_transcoding, NULL, NULL, ""},
 	//getHaveTranscoding
-	{cProcEntry, "enigma/multitranscoding", PROC_PERMISSION, get_multitranscoding, NULL, NULL, ""},
+	{cProcEntry, "enigma/multitranscoding", ENIGMA_PROC_PERMISSION, get_enigma_multitranscoding, NULL, NULL, ""},
 	//getHaveMultiTranscoding
-	{cProcEntry, "enigma/hdmi", PROC_PERMISSION, get_hdmi, NULL, NULL, ""},
+	{cProcEntry, "enigma/hdmi", ENIGMA_PROC_PERMISSION, get_enigma_hdmi, NULL, NULL, ""},
 	//getHaveHDMI
-	{cProcEntry, "enigma/yuv", PROC_PERMISSION, get_yuv, NULL, NULL, ""},
+	{cProcEntry, "enigma/yuv", ENIGMA_PROC_PERMISSION, get_enigma_yuv, NULL, NULL, ""},
 	//getHaveYUV
-	{cProcEntry, "enigma/rca", PROC_PERMISSION, get_rca, NULL, NULL, ""},
+	{cProcEntry, "enigma/rca", ENIGMA_PROC_PERMISSION, get_enigma_rca, NULL, NULL, ""},
 	//getHaveRCA
-	{cProcEntry, "enigma/avjack", PROC_PERMISSION, get_avjack, NULL, NULL, ""},
+	{cProcEntry, "enigma/avjack", ENIGMA_PROC_PERMISSION, get_enigma_avjack, NULL, NULL, ""},
 	//getHaveAVJACK
-	{cProcEntry, "enigma/scart", PROC_PERMISSION, get_scart, NULL, NULL, ""},
+	{cProcEntry, "enigma/scart", ENIGMA_PROC_PERMISSION, get_enigma_scart, NULL, NULL, ""},
 	//getHaveSCART
-	{cProcEntry, "enigma/dvi", PROC_PERMISSION, get_dvi, NULL, NULL, ""},
+	{cProcEntry, "enigma/dvi", ENIGMA_PROC_PERMISSION, get_enigma_dvi, NULL, NULL, ""},
 	//getHaveDVI
-	{cProcEntry, "enigma/svideo", PROC_PERMISSION, get_svideo, NULL, NULL, ""},
+	{cProcEntry, "enigma/svideo", ENIGMA_PROC_PERMISSION, get_enigma_svideo, NULL, NULL, ""},
 	//getHaveSVIDEO
-	{cProcEntry, "enigma/hdmihdin", PROC_PERMISSION, get_hdmihdin, NULL, NULL, ""},
+	{cProcEntry, "enigma/hdmihdin", ENIGMA_PROC_PERMISSION, get_enigma_hdmihdin, NULL, NULL, ""},
 	//getHaveHDMIinHD
-	{cProcEntry, "enigma/hdmifhdin", PROC_PERMISSION, get_hdmifhdin, NULL, NULL, ""},
+	{cProcEntry, "enigma/hdmifhdin", ENIGMA_PROC_PERMISSION, get_enigma_hdmifhdin, NULL, NULL, ""},
 	//getHaveHDMIinFHD
-	{cProcEntry, "enigma/wol", PROC_PERMISSION, get_wol, NULL, NULL, ""},
+	{cProcEntry, "enigma/wol", ENIGMA_PROC_PERMISSION, get_enigma_wol, NULL, NULL, ""},
 	//getHaveWOL
-	{cProcEntry, "enigma/wwol", PROC_PERMISSION, get_wwol, NULL, NULL, ""},
+	{cProcEntry, "enigma/wwol", PROC_PERMISSION, get_enigma_wwol, NULL, NULL, ""},
 	//getHaveWWOL
-	{cProcEntry, "enigma/ci", PROC_PERMISSION, get_ci, NULL, NULL, ""},
+	{cProcEntry, "enigma/ci", ENIGMA_PROC_PERMISSION, get_enigma_ci, NULL, NULL, ""},
 	//getHaveCI
-	{cProcEntry, "enigma/vfdsymbol", PROC_PERMISSION, get_vfdsymbol, NULL, NULL, ""},
+	{cProcEntry, "enigma/vfdsymbol", ENIGMA_PROC_PERMISSION, get_enigma_vfdsymbol, NULL, NULL, ""},
 	//getHaveVFDSymbol
-	{cProcEntry, "enigma/fhdskin", PROC_PERMISSION, get_fhdskin, NULL, NULL, ""},
+	{cProcEntry, "enigma/fhdskin", ENIGMA_PROC_PERMISSION, get_enigma_fhdskin, NULL, NULL, ""},
 	//getFHDSkin
-	{cProcEntry, "enigma/dboxlcd", PROC_PERMISSION, get_dboxlcd, NULL, NULL, ""},
+	{cProcEntry, "enigma/dboxlcd", ENIGMA_PROC_PERMISSION, get_enigma_dboxlcd, NULL, NULL, ""},
 	//getDBoxLCD
-	{cProcEntry, "enigma/imageversion", PROC_PERMISSION, get_imageversion, NULL, NULL, ""},
+	{cProcEntry, "enigma/imageversion", ENIGMA_PROC_PERMISSION, get_enigma_imageversion, NULL, NULL, ""},
 	//getImageVersion
-	{cProcEntry, "enigma/imagebuild", PROC_PERMISSION, get_imagebuild, NULL, NULL, ""},
+	{cProcEntry, "enigma/imagebuild", ENIGMA_PROC_PERMISSION, get_enigma_imagebuild, NULL, NULL, ""},
 	//getImageBuild
-	{cProcEntry, "enigma/imagedevbuild", PROC_PERMISSION, get_imagedevbuild, NULL, NULL, ""},
+	{cProcEntry, "enigma/imagedevbuild", ENIGMA_PROC_PERMISSION, get_enigma_imagedevbuild, NULL, NULL, ""},
 	//getImageDevBuild
-	{cProcEntry, "enigma/imagetype", PROC_PERMISSION, get_imagetype, NULL, NULL, ""}
+	{cProcEntry, "enigma/imagetype", ENIGMA_PROC_PERMISSION, get_enigma_imagetype, NULL, NULL, ""}
 	//getImageType
 };
 
@@ -127,38 +127,38 @@ struct proc_dir_entry * find_proc_dir(char * name)
 {
 	int i;
 
-	for (i = 0; i < sizeof(eProc) / sizeof(eProc[0]); i++)
+	for (i = 0; i < sizeof(enigmaProc) / sizeof(enigmaProc[0]); i++)
 	{
-		if ((eProc[i].type == cProcDir) && (strcmp(name, eProc[i].name) == 0))
-			return eProc[i].entry;
+		if ((enigmaProc[i].type == cProcDir) && (strcmp(name, enigmaProc[i].name) == 0))
+			return enigmaProc[i].entry;
 	}
 	return NULL;
 }
 
-static int eprocfs_show(struct seq_file *m, void* data)
+static int enigmaProcfs_show(struct seq_file *m, void* data)
 {
 	int bytes = 0;
 	char bufferfile[MAX_CHAR_LENGTH];
 	struct ProcWriteInfo *proc_info = m->private;
 	seq_printf(m, "\n");
 
-	bytes = sprintf(bufferfile, "eprocfs_show : proc_info->proc_i = %d\n", proc_info->proc_i);
+	bytes = sprintf(bufferfile, "enigmaProcfs_show : proc_info->proc_i = %d\n", proc_info->proc_i);
 
 	return 0;
 }
 
-static int eprocfs_open(struct inode *inode, struct file *file)
+static int enigmaProcfs_open(struct inode *inode, struct file *file)
 {
 	struct ProcWriteInfo *proc_info;
 	int i;
-	char *path, *ptr = NULL, *eProc_fpath = NULL;
+	char *path, *ptr = NULL, *enigmaProc_fpath = NULL;
 
 	proc_info = kmalloc(sizeof(struct ProcWriteInfo), GFP_KERNEL);
 	if (proc_info == NULL)
 		return -ENOMEM;
 
 	path = kmalloc(PAGE_SIZE, GFP_KERNEL);
-	eProc_fpath = kmalloc(PAGE_SIZE, GFP_KERNEL);
+	enigmaProc_fpath = kmalloc(PAGE_SIZE, GFP_KERNEL);
 #if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,26)
 	ptr = d_path(file->f_dentry, file->f_vfsmnt, path, PAGE_SIZE);
 #else
@@ -166,36 +166,36 @@ static int eprocfs_open(struct inode *inode, struct file *file)
 #endif
 	proc_info->proc_i = -EPERM;
 
-	for (i = 0; i < sizeof(eProc) / sizeof(eProc[0]); i++)
+	for (i = 0; i < sizeof(enigmaProc) / sizeof(enigmaProc[0]); i++)
 	{
 		int bytes = 0;
 		char buffer[MAX_CHAR_LENGTH];
 
-		sprintf(eProc_fpath, "/proc/%s", eProc[i].name);
+		sprintf(enigmaProc_fpath, "/proc/%s", enigmaProc[i].name);
 
-		bytes = sprintf(buffer, "eProc : file->f_mode = %d / %s / %s == %s\n", file->f_mode, eProc[i].name, ptr, eProc_fpath);
+		bytes = sprintf(buffer, "enigmaProc : file->f_mode = %d / %s / %s == %s\n", file->f_mode, enigmaProc[i].name, ptr, enigmaProc_fpath);
 
-//		if (eProc[i].type == cProcEntry && strstr(ptr, eProc[i].name))
-		if (eProc[i].type == cProcEntry && !strcmp(ptr, eProc_fpath))
+//		if (enigmaProc[i].type == cProcEntry && strstr(ptr, enigmaProc[i].name))
+		if (enigmaProc[i].type == cProcEntry && !strcmp(ptr, enigmaProc_fpath))
 		{
 			proc_info->proc_i = i;
 			proc_info->count = -EPERM;
 
 			if (file->f_mode & FMODE_READ)
 			{
-				if (eProc[i].read_proc != NULL)
+				if (enigmaProc[i].read_proc != NULL)
 				{
-					if (eProc[i].proc_info != NULL)
+					if (enigmaProc[i].proc_info != NULL)
 					{
-						proc_info = eProc[i].proc_info;
+						proc_info = enigmaProc[i].proc_info;
 					}
-					return single_open(file, eProc[i].read_proc, proc_info);
+					return single_open(file, enigmaProc[i].read_proc, proc_info);
 				}
-				return single_open(file, eprocfs_show, proc_info);
+				return single_open(file, enigmaProcfs_show, proc_info);
 			}
 			else if (file->f_mode & FMODE_WRITE)
 			{
-				if (eProc[i].write_proc == NULL)
+				if (enigmaProc[i].write_proc == NULL)
 				{
 					proc_info->proc_i = -EPERM;
 				}
@@ -207,7 +207,7 @@ static int eprocfs_open(struct inode *inode, struct file *file)
 	return 0;
 }
 
-static ssize_t eprocfs_write(struct file *file, const char __user *ubuf,
+static ssize_t enigmaProcfs_write(struct file *file, const char __user *ubuf,
 			       size_t count, loff_t *ppos)
 {
 	struct ProcWriteInfo *proc_info = file->private_data;
@@ -230,56 +230,56 @@ static ssize_t eprocfs_write(struct file *file, const char __user *ubuf,
 
 			proc_info->ubuf = ubuf;
 			proc_info->count = count;
-			eProc[proc_i].write_proc(proc_info, kbuf);
-			eProc[proc_i].proc_info = proc_info;
+			enigmaProc[proc_i].write_proc(proc_info, kbuf);
+			enigmaProc[proc_i].proc_info = proc_info;
 		}
 	}
 	return count;
 }
 
-static unsigned int eprocfs_poll(struct file *file,
+static unsigned int enigmaProcfs_poll(struct file *file,
 				   struct poll_table_struct *wait)
 {
 	unsigned int mask = 0;
 #ifdef DEBUG
-	printk(KERN_DEBUG "eprocfs: poll called (unimplemented)\n");
+	printk(KERN_DEBUG "enigmaProcfs: poll called (unimplemented)\n");
 #endif
 	return mask;
 }
 
-static int eprocfs_release(struct inode *inode, struct file *file)
+static int enigmaProcfs_release(struct inode *inode, struct file *file)
 {
 //	struct ProcWriteInfo *proc_info = file->private_data;
 #ifdef DEBUG
-	printk(KERN_DEBUG "eprocfs: release called\n");
+	printk(KERN_DEBUG "enigmaProcfs: release called\n");
 #endif
 //	kfree(proc_info);
 	return 0;
 }
 
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(5,6,0)
-static const struct proc_ops eprocfs_fops = {
-	.proc_open	= eprocfs_open,
+static const struct proc_ops enigmaProcfs_fops = {
+	.proc_open	= enigmaProcfs_open,
 	.proc_read	= seq_read,
-	.proc_write	= eprocfs_write,
+	.proc_write	= enigmaProcfs_write,
 	.proc_lseek	= no_llseek,
-	.proc_poll	= eprocfs_poll,
+	.proc_poll	= enigmaProcfs_poll,
 	.proc_mmap	= NULL,
-	.proc_release	= eprocfs_release,
+	.proc_release	= enigmaProcfs_release,
 };
 #else
-static const struct file_operations eprocfs_fops = {
+static const struct file_operations enigmaProcfs_fops = {
 	.owner		= THIS_MODULE,
-	.open		= eprocfs_open,
+	.open		= enigmaProcfs_open,
 	.read		= seq_read,
-	.write		= eprocfs_write,
+	.write		= enigmaProcfs_write,
 	.llseek	= no_llseek,
-	.poll		= eprocfs_poll,
+	.poll		= enigmaProcfs_poll,
 	.mmap		= NULL,
-	.release	= eprocfs_release,
+	.release	= enigmaProcfs_release,
 };
 #endif
-void e_kernel_info(void)
+void enigma_kernel_info(void)
 {
 	printk(KERN_INFO "model=@MACHINE@\n");
 	printk(KERN_INFO "displaymodel=@DISPLAY_MODEL@\n");
@@ -341,55 +341,55 @@ void e_kernel_info(void)
 	printk(KERN_INFO "imagetype=@DISTRO_TYPE@\n");
 }
 
-static int __init eprocfs_init_module(void)
+static int __init enigmaProcfs_init_module(void)
 {
 	int i;
 	char *path;
 	char *name;
 
-	e_kernel_info();
+	enigma_kernel_info();
 
-	for (i = 0; i < sizeof(eProc) / sizeof(eProc[0]); i++)
+	for (i = 0; i < sizeof(enigmaProc) / sizeof(enigmaProc[0]); i++)
 	{
-		path = dirname(eProc[i].name);
-		name = basename(eProc[i].name);
+		path = dirname(enigmaProc[i].name);
+		name = basename(enigmaProc[i].name);
 
-		switch (eProc[i].type)
+		switch (enigmaProc[i].type)
 		{
 			case cProcDir:
-				eProc[i].entry = proc_mkdir(name, find_proc_dir(path));
+				enigmaProc[i].entry = proc_mkdir(name, find_proc_dir(path));
 
-				if (eProc[i].entry == NULL)
+				if (enigmaProc[i].entry == NULL)
 				{
-					printk("%s(): could not create entry %s\n", __func__, eProc[i].name);
+					printk("%s(): could not create entry %s\n", __func__, enigmaProc[i].name);
 				}
 				break;
 
 			case cProcEntry:
 #if LINUX_VERSION_CODE < KERNEL_VERSION(3,10,0)
-				eProc[i].entry = create_proc_entry(
-					(strcmp("bus", path) == 0) ? eProc[i].name : name,
-					PROC_PERMISSION,
+				enigmaProc[i].entry = create_proc_entry(
+					(strcmp("bus", path) == 0) ? enigmaProc[i].name : name,
+					ENIGMA_PROC_PERMISSION,
 					(strcmp("bus", path) == 0) ? NULL : find_proc_dir(path)
 				);
 #else
-				eProc[i].entry = proc_create(
-					(strcmp("bus", path) == 0) ? eProc[i].name : name,
-					PROC_PERMISSION,
+				enigmaProc[i].entry = proc_create(
+					(strcmp("bus", path) == 0) ? enigmaProc[i].name : name,
+					ENIGMA_PROC_PERMISSION,
 					(strcmp("bus", path) == 0) ? NULL : find_proc_dir(path),
-					&eprocfs_fops
+					&enigmaProcfs_fops
 				);
 #endif
 				break;
 
 			default:
-				printk("%s(): invalid type %d\n", __func__, eProc[i].type);
+				printk("%s(): invalid type %d\n", __func__, enigmaProc[i].type);
 		}
 	}
 	return 0;
 }
 
-module_init(eprocfs_init_module);
+module_init(enigmaProcfs_init_module);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Open Vision developers/oe-alliance");
