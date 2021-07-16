@@ -2,3 +2,4 @@ enigma-module [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blu
 =============
 Enigma kernel module
 * Document: https://github.com/OpenVisionE2/enigma-module/blob/master/KERNELMODULE.md
+* CONFIG_SET_FS=y is needed
