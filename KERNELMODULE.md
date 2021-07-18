@@ -135,6 +135,8 @@ OV's boxbranding is different although it's based on OE-A's sources but has some
 
 /proc/enigma/imagetype replaces getImageType
 
+/proc/enigma/informations which has all above information in one proc file
+
 * Replacement for getMachineProcModel is getBoxProc in StbHardware.py
 * Replacement for OE-A's boxbranding getDriverDate is getDriverInstalledDate in About.py (Components)
 * Replacement for OE-A's boxbranding getHaveMiniTV is LCDMiniTV in SystemInfo.py
@@ -601,3 +603,10 @@ imagetype:
 	Mostly we use this for backup tools and compatibility with other images.
 
 	Example: release
+
+informations:
+	BoxInfo.getItem("informations") (/proc/enigma/informations)
+
+	This variable includes all enigma proc informations in one file.
+
+	Example: All above examples in one file

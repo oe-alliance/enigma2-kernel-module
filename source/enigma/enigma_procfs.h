@@ -103,3 +103,4 @@ int get_enigma_imageversion(struct seq_file *m, void* data);
 int get_enigma_imagebuild(struct seq_file *m, void* data);
 int get_enigma_imagedevbuild(struct seq_file *m, void* data);
 int get_enigma_imagetype(struct seq_file *m, void* data);
+int get_enigma_allinfo(struct seq_file *m, void* data);
