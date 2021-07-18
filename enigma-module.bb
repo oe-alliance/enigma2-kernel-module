@@ -87,17 +87,24 @@ do_compile() {
 do_configure[nostamp] = "1"
 do_install[vardepsexclude] += "DATE"
 
+print_md5hash() {
+	printf "checksum=%s\n" $(md5sum "$1" | awk '{print $1}')
+}
+
 do_install() {
 	install -d ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/enigma
 	modinfo -d ${S}/enigma.ko > ${S}/enigma.txt
 	sed -i '1d' ${S}/enigma.txt
 	sort  ${S}/enigma.txt > enigma-${MACHINE}-${VISIONREVISION}.txt
+	print_md5hash ${S}/enigma-${MACHINE}-${VISIONREVISION}.txt >> ${S}/enigma-${MACHINE}-${VISIONREVISION}.txt
+	install -d ${D}${libdir}
+	install -m 0644 ${S}/enigma-${MACHINE}-${VISIONREVISION}.txt ${D}${libdir}/enigma.conf
 	install -m 0644 ${S}/enigma.ko ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/enigma/
 	install -d ${D}${sysconfdir}/modules-load.d
 	echo "enigma" > ${D}${sysconfdir}/modules-load.d/zzzzenigma.conf
 }
 
-FILES_${PN} += "${sysconfdir}"
+FILES_${PN} += "${sysconfdir} ${libdir}"
 
 export KCFLAGS = "-Wno-error"
 
