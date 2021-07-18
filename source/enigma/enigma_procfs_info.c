@@ -13,7 +13,7 @@ int get_enigma_displaymodel(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DISPLAY_MODEL@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "model=@DISPLAY_MODEL@\n");
+	printk(KERN_INFO "displaymodel=@DISPLAY_MODEL@\n");
 #endif
 	return 0;
 }
@@ -31,7 +31,7 @@ int get_enigma_displaybrand(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DISPLAY_BRAND@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "brand=@DISPLAY_BRAND@\n");
+	printk(KERN_INFO "displaybrand=@DISPLAY_BRAND@\n");
 #endif
 	return 0;
 }
@@ -516,9 +516,9 @@ int get_enigma_imagetype(struct seq_file *m, void* data)
 int get_enigma_allinfo(struct seq_file *m, void* data)
 {
 	seq_printf(m, "model=@MACHINE@\n");
-	seq_printf(m, "model=@DISPLAY_MODEL@\n");
+	seq_printf(m, "displaymodel=@DISPLAY_MODEL@\n");
 	seq_printf(m, "brand=@BOX_BRAND@\n");
-	seq_printf(m, "brand=@DISPLAY_BRAND@\n");
+	seq_printf(m, "displaybrand=@DISPLAY_BRAND@\n");
 	seq_printf(m, "platform=@STB_PLATFORM@\n");
 	seq_printf(m, "imgversion=@VISIONVERSION@\n");
 	seq_printf(m, "imgrevision=@VISIONREVISION@\n");
@@ -574,9 +574,9 @@ int get_enigma_allinfo(struct seq_file *m, void* data)
 	seq_printf(m, "imagetype=@DISTRO_TYPE@\n");
 #ifdef DEBUG
 	printk(KERN_INFO "model=@MACHINE@\n");
-	printk(KERN_INFO "model=@DISPLAY_MODEL@\n");
+	printk(KERN_INFO "displaymodel=@DISPLAY_MODEL@\n");
 	printk(KERN_INFO "brand=@BOX_BRAND@\n");
-	printk(KERN_INFO "brand=@DISPLAY_BRAND@\n");
+	printk(KERN_INFO "displaybrand=@DISPLAY_BRAND@\n");
 	printk(KERN_INFO "platform=@STB_PLATFORM@\n");
 	printk(KERN_INFO "imgversion=@VISIONVERSION@\n");
 	printk(KERN_INFO "imgrevision=@VISIONREVISION@\n");
