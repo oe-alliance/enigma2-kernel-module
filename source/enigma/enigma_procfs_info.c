@@ -481,7 +481,7 @@ int get_enigma_imageversion(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DISTRO_VERSION@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "imageversion(=@DISTRO_VERSION@\n");
+	printk(KERN_INFO "imageversion=@DISTRO_VERSION@\n");
 #endif
 	return 0;
 }
@@ -490,7 +490,7 @@ int get_enigma_imagebuild(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@BUILD_VERSION@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "imagebuild(=@BUILD_VERSION@\n");
+	printk(KERN_INFO "imagebuild=@BUILD_VERSION@\n");
 #endif
 	return 0;
 }
@@ -499,7 +499,7 @@ int get_enigma_imagedevbuild(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DEVELOPER_BUILD_VERSION@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "imagedevbuild(=@DEVELOPER_BUILD_VERSION@\n");
+	printk(KERN_INFO "imagedevbuild=@DEVELOPER_BUILD_VERSION@\n");
 #endif
 	return 0;
 }
@@ -508,7 +508,7 @@ int get_enigma_imagetype(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@DISTRO_TYPE@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "imagetype(=@DISTRO_TYPE@\n");
+	printk(KERN_INFO "imagetype=@DISTRO_TYPE@\n");
 #endif
 	return 0;
 }
@@ -568,10 +568,10 @@ int get_enigma_allinfo(struct seq_file *m, void* data)
 	seq_printf(m, "vfdsymbol=@HAVE_VFDSYMBOL@\n");
 	seq_printf(m, "fhdskin=@HAVE_FHDSKIN@\n");
 	seq_printf(m, "dboxlcd=@SUPPORT_DBOXLCD@\n");
-	seq_printf(m, "imageversion(=@DISTRO_VERSION@\n");
-	seq_printf(m, "imagebuild(=@BUILD_VERSION@\n");
-	seq_printf(m, "imagedevbuild(=@DEVELOPER_BUILD_VERSION@\n");
-	seq_printf(m, "imagetype(=@DISTRO_TYPE@\n");
+	seq_printf(m, "imageversion=@DISTRO_VERSION@\n");
+	seq_printf(m, "imagebuild=@BUILD_VERSION@\n");
+	seq_printf(m, "imagedevbuild=@DEVELOPER_BUILD_VERSION@\n");
+	seq_printf(m, "imagetype=@DISTRO_TYPE@\n");
 #ifdef DEBUG
 	printk(KERN_INFO "model=@MACHINE@\n");
 	printk(KERN_INFO "model=@DISPLAY_MODEL@\n");
@@ -626,10 +626,10 @@ int get_enigma_allinfo(struct seq_file *m, void* data)
 	printk(KERN_INFO "vfdsymbol=@HAVE_VFDSYMBOL@\n");
 	printk(KERN_INFO "fhdskin=@HAVE_FHDSKIN@\n");
 	printk(KERN_INFO "dboxlcd=@SUPPORT_DBOXLCD@\n");
-	printk(KERN_INFO "imageversion(=@DISTRO_VERSION@\n");
-	printk(KERN_INFO "imagebuild(=@BUILD_VERSION@\n");
-	printk(KERN_INFO "imagedevbuild(=@DEVELOPER_BUILD_VERSION@\n");
-	printk(KERN_INFO "imagetype(=@DISTRO_TYPE@\n");
+	printk(KERN_INFO "imageversion=@DISTRO_VERSION@\n");
+	printk(KERN_INFO "imagebuild=@BUILD_VERSION@\n");
+	printk(KERN_INFO "imagedevbuild=@DEVELOPER_BUILD_VERSION@\n");
+	printk(KERN_INFO "imagetype=@DISTRO_TYPE@\n");
 #endif
 	return 0;
 }
