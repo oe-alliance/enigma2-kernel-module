@@ -22,62 +22,120 @@ Current enigma2 reads the module via SystemInfo.py and current proc path is "/pr
 OV's boxbranding is different although it's based on OE-A's sources but has some extra calls and some removed, also we have different names in OV, as the module is a replacement for boxbranding also we tried to have similar names but lets see what replaces what:
 
 /proc/enigma/model replaces getBoxType (getMachineName and getMachineMake in OE-A's boxbranding)
+
 /proc/enigma/displaymodel repalces getDisplayModel
+
 /proc/enigma/brand replaces getBoxBrand (getMachineBrand and getBrandOEM in OE-A's boxbranding)
+
 /proc/enigma/displaybrand replaces getDisplayBrand
+
 /proc/enigma/platform replaces getMachineBuild
+
 /proc/enigma/imgversion replaces getIMGVersion
+
 /proc/enigma/imgrevision replaces getIMGRevision
+
 /proc/enigma/imglanguage replaces getIMGLanguage
+
 /proc/enigma/developername replaces getDeveloperName
+
 /proc/enigma/feedsurl replaces getFeedsUrl
+
 /proc/enigma/distro replaces getImageDistro
+
 /proc/enigma/oe replaces getOEVersion
+
 /proc/enigma/kernel replaces getKernelVersion
+
 /proc/enigma/python
+
 /proc/enigma/mediaservice replaces getE2Service
+
 /proc/enigma/multilib replaces getHaveMultiLib
+
 /proc/enigma/architecture replaces getImageArch
+
 /proc/enigma/socfamily replaces getSoCFamily
+
 /proc/enigma/blindscanbinary replaces getBlindscanBin
+
 /proc/enigma/rctype replaces getRCType
+
 /proc/enigma/rcname repalces getRCName
+
 /proc/enigma/rcidnum replaces getRCIDNum
+
 /proc/enigma/smallflash replaces getHaveSmallFlash
+
 /proc/enigma/middleflash replaces getHaveMiddleFlash
+
 /proc/enigma/imagedir replaces getImageFolder
+
 /proc/enigma/imagefs replaces getImageFileSystem
+
 /proc/enigma/mtdbootfs replaces getMachineMtdBoot
+
 /proc/enigma/mtdrootfs replaces getMachineMtdRoot
+
 /proc/enigma/mtdkernel replaces getMachineMtdKernel
+
 /proc/enigma/rootfile repalces getMachineRootFile
+
 /proc/enigma/kernelfile replaces getMachineKernelFile
+
 /proc/enigma/mkubifs replaces getMachineMKUBIFS
+
 /proc/enigma/ubinize replaces getMachineUBINIZE
+
 /proc/enigma/forcemode replaces getForceMode
+
 /proc/enigma/compiledate
+
 /proc/enigma/fpu replaces getImageFPU
+
 /proc/enigma/displaytype replaces getDisplayType
+
 /proc/enigma/transcoding replaces getHaveTranscoding (getHaveTranscoding1 in OE-A's boxbranding)
+
 /proc/enigma/multitranscoding replaces getHaveMultiTranscoding (getHaveTranscoding2 in OE-A's boxbranding)
+
 /proc/enigma/hdmi replaces getHaveHDMI
+
 /proc/enigma/yuv replaces getHaveYUV
+
 /proc/enigma/rca replaces getHaveRCA
+
 /proc/enigma/avjack replaces getHaveAVJACK
+
 /proc/enigma/scart replaces getHaveSCART
+
 /proc/enigma/dvi replaces getHaveDVI
+
 /proc/enigma/svideo replaces getHaveSVIDEO
+
 /proc/enigma/hdmihdin replaces getHaveHDMIinHD
+
 /proc/enigma/hdmifhdin replaces getHaveHDMIinFHD
+
 /proc/enigma/wol replaces getHaveWOL (Also getHaveWWOL in OE-A's boxbranding as we don't split Wake-on-LAN and Wake-on-WLAN)
+
 /proc/enigma/ci replaces getHaveCI
+
 /proc/enigma/vfdsymbol replaces getHaveVFDSymbol
+
 /proc/enigma/fhdskin replaces getFHDSkin
+
 /proc/enigma/dboxlcd replaces getDBoxLCD
+
 /proc/enigma/imageversion replaces getImageVersion
+
 /proc/enigma/imagebuild replaces getImageBuild
+
 /proc/enigma/imagedevbuild replaces getImageDevBuild
+
 /proc/enigma/imagetype replaces getImageType
+
+/proc/enigma/informations which has all above information in one proc file
 
 * Replacement for getMachineProcModel is getBoxProc in StbHardware.py
 * Replacement for OE-A's boxbranding getDriverDate is getDriverInstalledDate in About.py (Components)
@@ -545,3 +603,10 @@ imagetype:
 	Mostly we use this for backup tools and compatibility with other images.
 
 	Example: release
+
+informations:
+	BoxInfo.getItem("informations") (/proc/enigma/informations)
+
+	This variable includes all enigma proc informations in one file.
+
+	Example: All above examples in one file

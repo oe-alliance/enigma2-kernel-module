@@ -119,8 +119,9 @@ struct ProcStructure_s enigmaProc[] =
 	//getImageBuild
 	{cProcEntry, "enigma/imagedevbuild", ENIGMA_PROC_PERMISSION, get_enigma_imagedevbuild, NULL, NULL, ""},
 	//getImageDevBuild
-	{cProcEntry, "enigma/imagetype", ENIGMA_PROC_PERMISSION, get_enigma_imagetype, NULL, NULL, ""}
+	{cProcEntry, "enigma/imagetype", ENIGMA_PROC_PERMISSION, get_enigma_imagetype, NULL, NULL, ""},
 	//getImageType
+	{cProcEntry, "enigma/informations", ENIGMA_PROC_PERMISSION, get_enigma_allinfo, NULL, NULL, ""}
 };
 
 struct proc_dir_entry * find_proc_dir(char * name)
