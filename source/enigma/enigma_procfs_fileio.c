@@ -5,14 +5,22 @@ struct file* file_open(const char* path, int flags, int rights) {
 	mm_segment_t oldfs;
 	int err = 0;
 
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5,10,0))
+	oldfs = force_uaccess_begin();
+#else
 	oldfs = get_fs();
 #if LINUX_VERSION_CODE < KERNEL_VERSION(5,1,0)
 	set_fs(get_ds());
 #else
 	set_fs(KERNEL_DS);
 #endif
+#endif
 	filp = filp_open(path, flags, rights);
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5,10,0))
+	force_uaccess_end(oldfs);
+#else
 	set_fs(oldfs);
+#endif
 
 	if (IS_ERR(filp))
 	{
@@ -36,18 +44,26 @@ int file_read(struct file* file, unsigned char* data, unsigned int size)
 	mm_segment_t oldfs;
 	int ret;
 
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5,10,0))
+	oldfs = force_uaccess_begin();
+#else
 	oldfs = get_fs();
 #if LINUX_VERSION_CODE < KERNEL_VERSION(5,1,0)
 	set_fs(get_ds());
 #else
 	set_fs(KERNEL_DS);
 #endif
+#endif
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4,14,0)
 	ret = vfs_read(file, data, size, &file->f_pos);
 #else
 	ret = kernel_read(file, data, size, &file->f_pos);
 #endif
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5,10,0))
+	force_uaccess_end(oldfs);
+#else
 	set_fs(oldfs);
+#endif
 
 	return ret;
 }
@@ -57,18 +73,26 @@ int file_write(struct file* file, unsigned char* data, unsigned int size)
 	mm_segment_t oldfs;
 	int ret;
 
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5,10,0))
+	oldfs = force_uaccess_begin();
+#else
 	oldfs = get_fs();
 #if LINUX_VERSION_CODE < KERNEL_VERSION(5,1,0)
 	set_fs(get_ds());
 #else
 	set_fs(KERNEL_DS);
 #endif
+#endif
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4,14,0)
 	ret = vfs_write(file, data, size, &file->f_pos);
 #else
 	ret = kernel_write(file, data, size, &file->f_pos);
 #endif
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5,10,0))
+	force_uaccess_end(oldfs);
+#else
 	set_fs(oldfs);
+#endif
 
 	return ret;
 }
@@ -80,11 +104,15 @@ int remove_file(char *path)
 	struct path ndpath;
 	struct dentry *dentry;
 
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5,10,0))
+	oldfs = force_uaccess_begin();
+#else
 	oldfs = get_fs();
 #if LINUX_VERSION_CODE < KERNEL_VERSION(5,1,0)
 	set_fs(get_ds());
 #else
 	set_fs(KERNEL_DS);
+#endif
 #endif
 	ret = kern_path(path, LOOKUP_PARENT, &ndpath);
 	if (ret != 0)
@@ -108,7 +136,11 @@ int remove_file(char *path)
 #endif
 	dput(dentry);
 
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5,10,0))
+	force_uaccess_end(oldfs);
+#else
 	set_fs(oldfs);
+#endif
 
 	return ret;
 }
