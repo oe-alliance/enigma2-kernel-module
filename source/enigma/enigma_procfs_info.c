@@ -99,6 +99,15 @@ int get_enigma_distro(struct seq_file *m, void* data)
 	return 0;
 }
 
+int get_enigma_displaydistro(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@DISPLAY_DISTRO@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "displaydistro=@DISPLAY_DISTRO@\n");
+#endif
+	return 0;
+}
+
 int get_enigma_oe(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@OE_VERSION@\n");
@@ -535,6 +544,7 @@ int get_enigma_allinfo(struct seq_file *m, void* data)
 	seq_printf(m, "developername=@DEVELOPER_NAME@\n");
 	seq_printf(m, "feedsurl=@DISTRO_FEED_URI@\n");
 	seq_printf(m, "distro=@DISTRO_NAME@\n");
+	seq_printf(m, "displaydistro=@DISPLAY_DISTRO@\n");
 	seq_printf(m, "oe=@BUILD_VERSION@\n");
 	seq_printf(m, "kernel=@KERNELVERSION@\n");
 	seq_printf(m, "python=@PREFERRED_VERSION_python@\n");
@@ -594,6 +604,7 @@ int get_enigma_allinfo(struct seq_file *m, void* data)
 	printk(KERN_INFO "developername=@DEVELOPER_NAME@\n");
 	printk(KERN_INFO "feedsurl=@DISTRO_FEED_URI@\n");
 	printk(KERN_INFO "distro=@DISTRO_NAME@\n");
+	printk(KERN_INFO "displaydistro=@DISPLAY_DISTRO@\n");
 	printk(KERN_INFO "oe=@BUILD_VERSION@\n");
 	printk(KERN_INFO "kernel=@KERNELVERSION@\n");
 	printk(KERN_INFO "python=@PREFERRED_VERSION_python@\n");
