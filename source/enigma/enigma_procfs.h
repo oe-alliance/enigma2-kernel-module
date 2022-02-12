@@ -50,6 +50,7 @@ int get_enigma_model(struct seq_file *m, void* data);
 int get_enigma_displaymodel(struct seq_file *m, void* data);
 int get_enigma_brand(struct seq_file *m, void* data);
 int get_enigma_displaybrand(struct seq_file *m, void* data);
+int get_enigma_friendlyfamily(struct seq_file *m, void* data);
 int get_enigma_platform(struct seq_file *m, void* data);
 int get_enigma_imgversion(struct seq_file *m, void* data);
 int get_enigma_imgrevision(struct seq_file *m, void* data);

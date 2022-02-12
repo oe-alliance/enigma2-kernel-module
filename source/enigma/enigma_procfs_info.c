@@ -36,6 +36,15 @@ int get_enigma_displaybrand(struct seq_file *m, void* data)
 	return 0;
 }
 
+int get_enigma_friendlyfamily(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@FRIENDLY_FAMILY@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "friendlyfamily=@FRIENDLY_FAMILY@\n");
+#endif
+	return 0;
+}
+
 int get_enigma_platform(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@STB_PLATFORM@\n");
@@ -537,6 +546,7 @@ int get_enigma_allinfo(struct seq_file *m, void* data)
 	seq_printf(m, "displaymodel=@DISPLAY_MODEL@\n");
 	seq_printf(m, "brand=@BOX_BRAND@\n");
 	seq_printf(m, "displaybrand=@DISPLAY_BRAND@\n");
+	seq_printf(m, "friendlyfamily=@FRIENDLY_FAMILY@\n");
 	seq_printf(m, "platform=@STB_PLATFORM@\n");
 	seq_printf(m, "imgversion=@VISIONVERSION@\n");
 	seq_printf(m, "imgrevision=@VISIONREVISION@\n");
@@ -597,6 +607,7 @@ int get_enigma_allinfo(struct seq_file *m, void* data)
 	printk(KERN_INFO "displaymodel=@DISPLAY_MODEL@\n");
 	printk(KERN_INFO "brand=@BOX_BRAND@\n");
 	printk(KERN_INFO "displaybrand=@DISPLAY_BRAND@\n");
+	printk(KERN_INFO "friendlyfamily=@FRIENDLY_FAMILY@\n");
 	printk(KERN_INFO "platform=@STB_PLATFORM@\n");
 	printk(KERN_INFO "imgversion=@VISIONVERSION@\n");
 	printk(KERN_INFO "imgrevision=@VISIONREVISION@\n");
