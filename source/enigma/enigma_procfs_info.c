@@ -13,7 +13,7 @@ int get_enigma_machinebuild(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@MACHINEBUILD@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "model=@MACHINEBUILD@\n");
+	printk(KERN_INFO "machinebuild=@MACHINEBUILD@\n");
 #endif
 	return 0;
 }
@@ -552,7 +552,7 @@ int get_enigma_imagetype(struct seq_file *m, void* data)
 int get_enigma_allinfo(struct seq_file *m, void* data)
 {
 	seq_printf(m, "model=@MACHINE@\n");
-	seq_printf(m, "model=@MACHINEBUILD@\n");
+	seq_printf(m, "machinebuild=@MACHINEBUILD@\n");
 	seq_printf(m, "displaymodel=@DISPLAY_MODEL@\n");
 	seq_printf(m, "brand=@BOX_BRAND@\n");
 	seq_printf(m, "displaybrand=@DISPLAY_BRAND@\n");
@@ -614,7 +614,7 @@ int get_enigma_allinfo(struct seq_file *m, void* data)
 	seq_printf(m, "imagetype=@DISTRO_TYPE@\n");
 #ifdef DEBUG
 	printk(KERN_INFO "model=@MACHINE@\n");
-	printk(KERN_INFO "model=@MACHINEBUILD@\n");
+	printk(KERN_INFO "machinebuild=@MACHINEBUILD@\n");
 	printk(KERN_INFO "displaymodel=@DISPLAY_MODEL@\n");
 	printk(KERN_INFO "brand=@BOX_BRAND@\n");
 	printk(KERN_INFO "displaybrand=@DISPLAY_BRAND@\n");
