@@ -142,7 +142,8 @@ Here is the list of variables currently supported:
 		("getMachineBrand() and "getBrandOEM()" in OE-Alliance's "boxbranding")
 	"displaybrand" or "/proc/enigma/displaybrand" replaces "getDisplayBrand()"
 	"friendlyfamily" or "/proc/enigma/friendlyfamily" replaces "getFriendlyFamily()"
-	"platform" or "/proc/enigma/platform" replaces "getMachineBuild()"
+	"platform" or "/proc/enigma/platform" in OV only 
+	"machinebuild" or "/proc/enigma/machinebuild" replaces "getMachineBuild()"
 	"imgversion" or "/proc/enigma/imgversion" replaces "getIMGVersion()"
 	"imgrevision" or "/proc/enigma/imgrevision" replaces "getIMGRevision()"
 	"imglanguage" or "/proc/enigma/imglanguage" replaces "getIMGLanguage()
@@ -219,6 +220,16 @@ model:
 		only what kernel defconfig shows as hostname.
 
 	Example: h9
+
+machinebuild:
+
+	BoxInfo.getItem("machinebuild") (/proc/enigma/machinebuild)
+
+		This variable defines the receiver machinebuild in OE sources.
+
+		Describes the image name to differentiate the OEM machines when building.
+
+	Example: zgemmah9
 
 displaymodel:
 

@@ -47,6 +47,7 @@ char * dirname(char * name);
 char * basename(char * name);
 
 int get_enigma_model(struct seq_file *m, void* data);
+int get_enigma_machinebuild(struct seq_file *m, void* data);
 int get_enigma_displaymodel(struct seq_file *m, void* data);
 int get_enigma_brand(struct seq_file *m, void* data);
 int get_enigma_displaybrand(struct seq_file *m, void* data);
