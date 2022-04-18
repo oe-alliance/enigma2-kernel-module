@@ -289,7 +289,7 @@ static const struct file_operations enigmaProcfs_fops = {
 void enigma_kernel_info(void)
 {
 	printk(KERN_INFO "model=@MACHINE@\n");
-	printk(KERN_INFO "model=@MACHINEBUILD@\n");
+	printk(KERN_INFO "machinebuild=@MACHINEBUILD@\n");
 	printk(KERN_INFO "displaymodel=@DISPLAY_MODEL@\n");
 	printk(KERN_INFO "brand=@BOX_BRAND@\n");
 	printk(KERN_INFO "displaybrand=@DISPLAY_BRAND@\n");
