@@ -549,6 +549,15 @@ int get_enigma_imagetype(struct seq_file *m, void* data)
 	return 0;
 }
 
+int get_enigma_driversdate(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@DRIVERSDATE@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "driversdate=@DRIVERSDATE@\n");
+#endif
+	return 0;
+}
+
 int get_enigma_allinfo(struct seq_file *m, void* data)
 {
 	seq_printf(m, "model=@MACHINE@\n");
@@ -612,6 +621,7 @@ int get_enigma_allinfo(struct seq_file *m, void* data)
 	seq_printf(m, "imagebuild=@BUILD_VERSION@\n");
 	seq_printf(m, "imagedevbuild=@DEVELOPER_BUILD_VERSION@\n");
 	seq_printf(m, "imagetype=@DISTRO_TYPE@\n");
+	seq_printf(m, "driversdate=@DRIVERSDATE@\n");
 #ifdef DEBUG
 	printk(KERN_INFO "model=@MACHINE@\n");
 	printk(KERN_INFO "machinebuild=@MACHINEBUILD@\n");
@@ -674,6 +684,7 @@ int get_enigma_allinfo(struct seq_file *m, void* data)
 	printk(KERN_INFO "imagebuild=@BUILD_VERSION@\n");
 	printk(KERN_INFO "imagedevbuild=@DEVELOPER_BUILD_VERSION@\n");
 	printk(KERN_INFO "imagetype=@DISTRO_TYPE@\n");
+	printk(KERN_INFO "driversdate=@DRIVERSDATE@\n");
 #endif
 	return 0;
 }

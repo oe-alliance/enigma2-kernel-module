@@ -202,6 +202,7 @@ Here is the list of variables currently supported:
 	"imagetype" or "/proc/enigma/imagetype" replaces "getImageType()"
 	"/proc/enigma/informations" which has all above information in one proc file.
 		NOTE: There is no "enigma.info" version of this item!
+	"driversdate" or "/proc/enigma/driversdate" replaces "getDriverDate()"
 
 * Replacement for getMachineProcModel is getBoxProc in StbHardware.py
 * Replacement for OE-Alliance's boxbranding getDriverDate is getDriverInstalledDate in About.py (Components)
@@ -787,6 +788,16 @@ imagetype:
 		Mostly we use this for backup tools and compatibility with other images.
 
 	Example: release
+
+driversdate:
+
+	BoxInfo.getItem("driversdate") (/proc/enigma/driversdate)
+
+		This variable defines the drivers date.
+
+		Mostly we use this for backup tools and compatibility with other images.
+
+	Example: 1.1.2002
 
 informations:
 
