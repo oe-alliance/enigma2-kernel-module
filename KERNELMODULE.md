@@ -186,6 +186,7 @@ Here is the list of variables currently supported:
 	"rca" or "/proc/enigma/rca" replaces "getHaveRCA()"
 	"avjack" or "/proc/enigma/avjack" replaces "getHaveAVJACK()"
 	"scart" or "/proc/enigma/scart" replaces "getHaveSCART()"
+	"scartyuv" or "/proc/enigma/scart" replaces "getHaveSCARTYUV()"
 	"dvi" or "/proc/enigma/dvi" replaces "getHaveDVI()"
 	"svideo" or "/proc/enigma/svideo" replaces "getHaveSVIDEO()"
 	"hdmihdin" or "/proc/enigma/hdmihdin" replaces "getHaveHDMIinHD()"
@@ -672,6 +673,14 @@ scart:
 	BoxInfo.getItem("scart") (/proc/enigma/scart)
 
 		This variable defines if a receiver has SCART output.
+
+	Example: False
+
+scartyuv:
+
+	BoxInfo.getItem("scartyuv") (/proc/enigma/scartyuv)
+
+		This variable defines if a receiver has SCART YUV output.
 
 	Example: False
 
