@@ -93,6 +93,7 @@ int get_enigma_yuv(struct seq_file *m, void* data);
 int get_enigma_rca(struct seq_file *m, void* data);
 int get_enigma_avjack(struct seq_file *m, void* data);
 int get_enigma_scart(struct seq_file *m, void* data);
+int get_enigma_scart-yuv(struct seq_file *m, void* data);
 int get_enigma_dvi(struct seq_file *m, void* data);
 int get_enigma_svideo(struct seq_file *m, void* data);
 int get_enigma_hdmihdin(struct seq_file *m, void* data);

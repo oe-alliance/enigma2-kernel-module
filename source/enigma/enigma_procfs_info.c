@@ -423,6 +423,15 @@ int get_enigma_scart(struct seq_file *m, void* data)
 	return 0;
 }
 
+int get_enigma_scart-yuv(struct seq_file *m, void* data)
+{
+	seq_printf(m, "@HAVE_SCART_YUV@\n");
+#ifdef DEBUG
+	printk(KERN_INFO "scart-yuv=@HAVE_SCART_YUV@\n");
+#endif
+	return 0;
+}
+
 int get_enigma_dvi(struct seq_file *m, void* data)
 {
 	seq_printf(m, "@HAVE_DVI@\n");
@@ -607,6 +616,7 @@ int get_enigma_allinfo(struct seq_file *m, void* data)
 	seq_printf(m, "rca=@HAVE_RCA@\n");
 	seq_printf(m, "avjack=@HAVE_AV_JACK@\n");
 	seq_printf(m, "scart=@HAVE_SCART@\n");
+	seq_printf(m, "scart-yuv=@HAVE_SCART_YUV@\n");
 	seq_printf(m, "dvi=@HAVE_DVI@\n");
 	seq_printf(m, "svideo=@HAVE_SVIDEO@\n");
 	seq_printf(m, "hdmihdin=@HAVE_HDMI_IN_HD@\n");
@@ -670,6 +680,7 @@ int get_enigma_allinfo(struct seq_file *m, void* data)
 	printk(KERN_INFO "rca=@HAVE_RCA@\n");
 	printk(KERN_INFO "avjack=@HAVE_AV_JACK@\n");
 	printk(KERN_INFO "scart=@HAVE_SCART@\n");
+	printk(KERN_INFO "scart-yuv=@HAVE_SCART_YUV@\n");
 	printk(KERN_INFO "dvi=@HAVE_DVI@\n");
 	printk(KERN_INFO "svideo=@HAVE_SVIDEO@\n");
 	printk(KERN_INFO "hdmihdin=@HAVE_HDMI_IN_HD@\n");

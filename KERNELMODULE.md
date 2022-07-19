@@ -186,6 +186,7 @@ Here is the list of variables currently supported:
 	"rca" or "/proc/enigma/rca" replaces "getHaveRCA()"
 	"avjack" or "/proc/enigma/avjack" replaces "getHaveAVJACK()"
 	"scart" or "/proc/enigma/scart" replaces "getHaveSCART()"
+	"scart-yuv" or "/proc/enigma/scart" replaces "getHaveSCARTYUV()"
 	"dvi" or "/proc/enigma/dvi" replaces "getHaveDVI()"
 	"svideo" or "/proc/enigma/svideo" replaces "getHaveSVIDEO()"
 	"hdmihdin" or "/proc/enigma/hdmihdin" replaces "getHaveHDMIinHD()"
@@ -207,7 +208,6 @@ Here is the list of variables currently supported:
 * Replacement for getMachineProcModel is getBoxProc in StbHardware.py
 * Replacement for OE-Alliance's boxbranding getDriverDate is getDriverInstalledDate in About.py (Components)
 * Replacement for OE-Alliance's boxbranding getHaveMiniTV is LCDMiniTV in SystemInfo.py
-* We don't have anything for OE-A's boxbranding getHaveSCARTYUV and we manage it via if conditions in VideoHardware.py
 
 Time to explain each one and give examples:
 
@@ -672,6 +672,14 @@ scart:
 	BoxInfo.getItem("scart") (/proc/enigma/scart)
 
 		This variable defines if a receiver has SCART output.
+
+	Example: False
+
+scart-yuv:
+
+	BoxInfo.getItem("scart-yuv") (/proc/enigma/scart-yuv)
+
+		This variable defines if a receiver has SCART YUV output.
 
 	Example: False
 
